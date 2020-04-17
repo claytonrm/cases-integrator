@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "folder": "Customer Relations",
+    "customer": "Petra A. Sosa",
+    "title": "Turpis Nulla Institute",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Single",
+      "Married"
+    ],
+    "description": "lacus. Cras interdum. Nunc",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Jana",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-08-05T01:21:08Z"
+  },
+  {
+    "id": 1000,
+    "folder": "Accounting",
+    "customer": "Tyler S. Flynn",
+    "title": "Ipsum Dolor Incorporated",
+    "labels": [
+      "Common-Law",
+      "Married",
+      "Divorced"
+    ],
+    "description": "pede nec ante",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Lana",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-02-05T14:45:41Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Mona W. Landry",
+    "title": "Facilisi Inc.",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "libero est, congue",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Owen",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-12-31T08:42:56Z"
+  },
+  {
+    "id": 400,
+    "folder": "Customer Service",
+    "customer": "Aladdin N. Lawrence",
+    "title": "Nibh Phasellus Industries",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "tempor",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Kyle",
+    "accessType": "PUBLIC",
+    "createdAt": "2021-03-08T05:34:41Z"
+  },
+  {
+    "folder": "Customer Service",
+    "customer": "Aladdin N. Lawrence",
+    "title": "Nibh Phasellus Industries",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "tempor",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Kyle",
+    "accessType": "PUBLIC",
+    "createdAt": "2021-03-08T05:34:41Z"
+  }
+]

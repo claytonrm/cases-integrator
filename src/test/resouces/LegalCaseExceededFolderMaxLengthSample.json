@@ -1,0 +1,14 @@
+{
+  "folder": "C234324233456787654CSDEER34 - Legal Cases",
+  "customer": "Mike McCready",
+  "title": "Full Sample Case",
+  "labels": [
+    "important",
+    "red"
+  ],
+  "description": "Some description about case stuff",
+  "notes": "Some notes about case stuff",
+  "inChargeOf": "Eddie Vedder",
+  "accessType": "PRIVATE",
+  "createdAt": "2020-04-17T01:21:08Z"
+}

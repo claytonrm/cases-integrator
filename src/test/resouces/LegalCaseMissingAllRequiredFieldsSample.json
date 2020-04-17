@@ -1,0 +1,12 @@
+{
+  "folder": "B16 - Legal Cases",
+  "labels": [
+    "red",
+    "black",
+    "important",
+    "archived"
+  ],
+  "description": "Some description about case stuff",
+  "notes": "Some notes about case stuff",
+  "accessType": "PUBLIC"
+}

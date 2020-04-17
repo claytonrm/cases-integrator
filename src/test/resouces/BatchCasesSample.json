@@ -1,0 +1,1515 @@
+[
+  {
+    "folder": "Customer Relations",
+    "customer": "Petra A. Sosa",
+    "title": "Turpis Nulla Institute",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Single",
+      "Married"
+    ],
+    "description": "lacus. Cras interdum. Nunc",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Jana",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-08-05T01:21:08Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Tyler S. Flynn",
+    "title": "Ipsum Dolor Incorporated",
+    "labels": [
+      "Common-Law",
+      "Married",
+      "Divorced"
+    ],
+    "description": "pede nec ante",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Lana",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-02-05T14:45:41Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Mona W. Landry",
+    "title": "Facilisi Inc.",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "libero est, congue",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Owen",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-12-31T08:42:56Z"
+  },
+  {
+    "folder": "Customer Service",
+    "customer": "Aladdin N. Lawrence",
+    "title": "Nibh Phasellus Industries",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "tempor",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Kyle",
+    "accessType": "PUBLIC",
+    "createdAt": "2021-03-08T05:34:41Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Malcolm Y. Goodman",
+    "title": "Neque Company",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "dolor quam, elementum",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Lara",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-07-11T10:59:18Z"
+  },
+  {
+    "folder": "Customer Relations",
+    "customer": "Yetta Y. Gay",
+    "title": "Aliquam Company",
+    "labels": [
+      "Single",
+      "Married",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "ac ipsum. Phasellus vitae mauris",
+    "notes": "Lorem",
+    "inChargeOf": "Chelsea",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-05-06T01:44:35Z"
+  },
+  {
+    "folder": "Human Resources",
+    "customer": "Kerry W. Foley",
+    "title": "Enim Gravida Corp.",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "primis in faucibus orci",
+    "notes": "Lorem",
+    "inChargeOf": "Gavin",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-04-15T11:20:13Z"
+  },
+  {
+    "folder": "Human Resources",
+    "customer": "Quentin I. Carrillo",
+    "title": "Egestas Corp.",
+    "labels": [
+      "Divorced"
+    ],
+    "description": "justo eu arcu. Morbi sit",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Louis",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-12-16T13:31:50Z"
+  },
+  {
+    "folder": "Asset Management",
+    "customer": "Miranda H. Curtis",
+    "title": "Phasellus Nulla Integer Inc.",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Married",
+      "Common-Law"
+    ],
+    "description": "Duis ac arcu. Nunc",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Idona",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-11-11T19:53:51Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Oprah A. Barker",
+    "title": "Condimentum Associates",
+    "labels": [
+      "Divorced",
+      "Married"
+    ],
+    "description": "magna. Duis dignissim tempor arcu.",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Aiko",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-03-19T03:29:37Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Tanya A. Kelly",
+    "title": "Non Nisi Aenean Corp.",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Single",
+      "Divorced"
+    ],
+    "description": "porttitor interdum. Sed auctor",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Sean",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-07-22T08:50:57Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Philip F. Stevenson",
+    "title": "Sit Amet Dapibus Incorporated",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Divorced",
+      "Married"
+    ],
+    "description": "Donec feugiat",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Charles",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-06-05T14:41:46Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Kylan P. Holmes",
+    "title": "Non Dapibus Rutrum Consulting",
+    "labels": [
+      "Married",
+      "Divorced",
+      "Single",
+      "Common-Law"
+    ],
+    "description": "pede, ultrices a, auctor non,",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Chancellor",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-06-03T19:50:22Z"
+  },
+  {
+    "folder": "Tech Support",
+    "customer": "Gemma D. Chen",
+    "title": "Iaculis Aliquet Company",
+    "labels": [
+      "Common-Law",
+      "Single"
+    ],
+    "description": "vel",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Allegra",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-02-19T08:04:56Z"
+  },
+  {
+    "folder": "Sales and Marketing",
+    "customer": "Cameron D. Valdez",
+    "title": "Eu Tellus Ltd",
+    "labels": [
+      "Single",
+      "Married",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "purus. Nullam",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Nasim",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-02-10T16:35:15Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Amy B. Sherman",
+    "title": "Sodales Incorporated",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "Suspendisse",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Kermit",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-10-18T10:56:37Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Myles S. Montgomery",
+    "title": "Justo PC",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Married",
+      "Divorced"
+    ],
+    "description": "orci.",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Len",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-01-11T00:07:42Z"
+  },
+  {
+    "folder": "Tech Support",
+    "customer": "Keegan A. Tillman",
+    "title": "Id Limited",
+    "labels": [
+      "Common-Law",
+      "Married",
+      "Divorced",
+      "Single"
+    ],
+    "description": "arcu. Vestibulum ut eros",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Naomi",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-06-27T00:17:04Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Wyatt M. Bailey",
+    "title": "Nulla Vulputate LLP",
+    "labels": [
+      "Married",
+      "Single",
+      "Common-Law",
+      "Divorced"
+    ],
+    "description": "metus urna convallis",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Justin",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-01-30T08:50:29Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Solomon X. Valenzuela",
+    "title": "Proin Velit Institute",
+    "labels": [
+      "Single",
+      "Married",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "lorem, eget mollis lectus pede",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Akeem",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-11-01T12:57:25Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Aimee B. Winters",
+    "title": "Vel Vulputate Associates",
+    "labels": [
+      "Common-Law",
+      "Married",
+      "Divorced",
+      "Single"
+    ],
+    "description": "ultrices. Vivamus",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Naomi",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-11-17T10:57:59Z"
+  },
+  {
+    "folder": "Media Relations",
+    "customer": "Kathleen Q. Grant",
+    "title": "Orci Phasellus Dapibus Ltd",
+    "labels": [
+      "Common-Law",
+      "Married"
+    ],
+    "description": "nisi dictum augue malesuada",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Xavier",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-12-19T04:17:19Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Brenna W. Booker",
+    "title": "Dui PC",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Married"
+    ],
+    "description": "ridiculus",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Wilma",
+    "accessType": "PUBLIC",
+    "createdAt": "2021-03-05T07:13:59Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Joan B. Garrison",
+    "title": "Vulputate Corporation",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "sit amet diam",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Chastity",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-03-10T07:41:08Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Holmes E. Velez",
+    "title": "Ac Sem Foundation",
+    "labels": [
+      "Common-Law"
+    ],
+    "description": "Cum sociis",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Wanda",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-07-15T20:16:27Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Hollee W. Goodwin",
+    "title": "Enim Associates",
+    "labels": [
+      "Divorced",
+      "Married"
+    ],
+    "description": "euismod in, dolor. Fusce",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Marsden",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-11-11T14:28:42Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "Hermione Y. Mosley",
+    "title": "Suscipit Est Associates",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Married",
+      "Single"
+    ],
+    "description": "eu, eleifend nec, malesuada ut,",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Jacqueline",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-09-29T18:15:56Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Ronan K. Page",
+    "title": "Sed Pede Nec LLC",
+    "labels": [
+      "Married",
+      "Divorced"
+    ],
+    "description": "et netus et malesuada fames",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Trevor",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-10-10T06:44:37Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Ruth Q. Hahn",
+    "title": "Ac Limited",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Single",
+      "Divorced"
+    ],
+    "description": "molestie. Sed id risus",
+    "notes": "Lorem",
+    "inChargeOf": "Nicole",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-08-07T02:54:32Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Lionel D. England",
+    "title": "Dolor Dolor Tempus Consulting",
+    "labels": [
+      "Single",
+      "Common-Law",
+      "Divorced",
+      "Married"
+    ],
+    "description": "risus. Morbi metus.",
+    "notes": "Lorem",
+    "inChargeOf": "Kenyon",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-06-12T17:22:59Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Colorado T. Silva",
+    "title": "Metus Corporation",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Single",
+      "Married"
+    ],
+    "description": "lobortis augue scelerisque",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Kim",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-02-27T03:40:19Z"
+  },
+  {
+    "folder": "Asset Management",
+    "customer": "Wang L. Meyers",
+    "title": "Iaculis Enim Sit Consulting",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "augue eu tellus. Phasellus elit",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Glenna",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-11-28T23:01:29Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Odette H. Jarvis",
+    "title": "Suspendisse Aliquet Molestie Corporation",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "arcu. Aliquam ultrices iaculis odio.",
+    "notes": "Lorem",
+    "inChargeOf": "Neville",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-02-24T16:25:06Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Helen B. Puckett",
+    "title": "Sed Pede Nec LLP",
+    "labels": [
+      "Single",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "in",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Judah",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-03-28T23:42:10Z"
+  },
+  {
+    "folder": "Customer Service",
+    "customer": "Rinah J. Chavez",
+    "title": "Integer Consulting",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "mattis ornare, lectus",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Octavia",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-12-20T13:18:53Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Amir R. Meyers",
+    "title": "Auctor Velit Aliquam Industries",
+    "labels": [
+      "Single",
+      "Common-Law",
+      "Married",
+      "Divorced"
+    ],
+    "description": "porta elit, a",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Angelica",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-01-22T14:36:04Z"
+  },
+  {
+    "folder": "Human Resources",
+    "customer": "Ella W. Kline",
+    "title": "Nullam Lobortis Ltd",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "dolor. Quisque",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Jorden",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-04-20T03:33:17Z"
+  },
+  {
+    "folder": "Sales and Marketing",
+    "customer": "Keaton H. Melton",
+    "title": "Per Conubia Nostra Inc.",
+    "labels": [
+      "Divorced",
+      "Married",
+      "Single",
+      "Common-Law"
+    ],
+    "description": "non massa",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Keane",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-03-23T04:28:28Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Ainsley C. Manning",
+    "title": "Est PC",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Married",
+      "Divorced"
+    ],
+    "description": "vel,",
+    "notes": "Lorem",
+    "inChargeOf": "Janna",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-08-04T16:13:59Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Lani U. Dillon",
+    "title": "Blandit Enim Consequat Industries",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "vitae,",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Charissa",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-03-06T19:16:49Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Breanna K. Winters",
+    "title": "Commodo Tincidunt Nibh Industries",
+    "labels": [
+      "Married",
+      "Single",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "metus vitae velit egestas lacinia.",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Nevada",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-05-12T16:38:34Z"
+  },
+  {
+    "folder": "Customer Service",
+    "customer": "Shelley P. England",
+    "title": "Nunc Quis Company",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "Fusce mi",
+    "notes": "Lorem",
+    "inChargeOf": "Akeem",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-02-04T11:16:18Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Octavia R. Singleton",
+    "title": "Vel Convallis PC",
+    "labels": [
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "eu arcu.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Ori",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-01-10T23:34:49Z"
+  },
+  {
+    "folder": "Customer Relations",
+    "customer": "Quentin A. Klein",
+    "title": "Tincidunt Adipiscing Mauris Company",
+    "labels": [
+      "Divorced",
+      "Single",
+      "Married",
+      "Common-Law"
+    ],
+    "description": "sed pede. Cum sociis",
+    "notes": "Lorem",
+    "inChargeOf": "Castor",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-05-22T22:29:24Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Nerea W. Lucas",
+    "title": "Vitae Erat LLC",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Single",
+      "Divorced"
+    ],
+    "description": "nisi. Mauris",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Iona",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-03-07T02:03:36Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Rooney J. Orr",
+    "title": "Sed Et Libero Company",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Married",
+      "Single"
+    ],
+    "description": "pharetra ut, pharetra sed,",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Brett",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-10-21T17:34:46Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Curran Q. Weaver",
+    "title": "Lobortis Quis Pede Inc.",
+    "labels": [],
+    "description": "vitae, orci. Phasellus dapibus",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Hope",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-10-21T02:25:44Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Marsden P. Diaz",
+    "title": "Ridiculus Mus LLC",
+    "labels": [
+      "Married"
+    ],
+    "description": "purus mauris a nunc. In",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Levi",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-06-14T16:34:22Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Carson Z. Bird",
+    "title": "Eget LLC",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Single",
+      "Married"
+    ],
+    "description": "eget, dictum",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Ina",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-10-15T08:47:48Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Ezekiel Q. Byers",
+    "title": "Dolor Inc.",
+    "labels": [
+      "Married",
+      "Common-Law"
+    ],
+    "description": "bibendum. Donec felis",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Joel",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-01-27T10:36:53Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Kibo K. Wilson",
+    "title": "Odio Auctor Vitae Foundation",
+    "labels": [
+      "Married",
+      "Divorced"
+    ],
+    "description": "Nunc ac sem",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Jerome",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-03-20T10:02:25Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Grant D. Sandoval",
+    "title": "Nibh Donec PC",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Married",
+      "Divorced"
+    ],
+    "description": "lobortis ultrices. Vivamus rhoncus. Donec",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Flynn",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-06-21T05:09:52Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Zahir I. Joseph",
+    "title": "Diam Vel Arcu PC",
+    "labels": [
+      "Single",
+      "Married",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "tempor, est ac mattis",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Myles",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-09-03T12:58:17Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Karina E. Whitehead",
+    "title": "Placerat Augue Inc.",
+    "labels": [
+      "Divorced",
+      "Single",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "vel,",
+    "notes": "Lorem",
+    "inChargeOf": "Wynne",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-06-21T07:04:25Z"
+  },
+  {
+    "folder": "Customer Service",
+    "customer": "Judah K. Delacruz",
+    "title": "Neque Inc.",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Divorced",
+      "Married"
+    ],
+    "description": "Mauris molestie pharetra nibh.",
+    "notes": "Lorem",
+    "inChargeOf": "Simone",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-04-06T00:13:13Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Holmes D. Henry",
+    "title": "Aliquam Auctor Velit LLP",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Single",
+      "Married"
+    ],
+    "description": "pede.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Rogan",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-11-15T19:01:57Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "Berk L. Witt",
+    "title": "Mollis Nec Industries",
+    "labels": [
+      "Common-Law"
+    ],
+    "description": "et tristique pellentesque, tellus sem",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Giacomo",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-04-04T06:55:32Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Yolanda P. Reyes",
+    "title": "Tellus Suspendisse Incorporated",
+    "labels": [
+      "Married",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "Aenean sed pede nec ante",
+    "notes": "Lorem",
+    "inChargeOf": "Tamara",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-04-24T04:29:10Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Zorita R. Schmidt",
+    "title": "Dui LLP",
+    "labels": [
+      "Married",
+      "Divorced",
+      "Single",
+      "Common-Law"
+    ],
+    "description": "diam eu dolor egestas rhoncus.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Harlan",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-05-02T11:19:25Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Tad H. Austin",
+    "title": "Eu Eleifend Foundation",
+    "labels": [],
+    "description": "neque et nunc.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Colleen",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-12-24T17:15:54Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "Faith X. Schwartz",
+    "title": "Donec At Arcu Foundation",
+    "labels": [
+      "Married",
+      "Divorced",
+      "Single",
+      "Common-Law"
+    ],
+    "description": "Proin non",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Tyrone",
+    "accessType": "PUBLIC",
+    "createdAt": "2021-03-21T17:13:24Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Carolyn U. Phillips",
+    "title": "Nibh Quisque Nonummy Consulting",
+    "labels": [
+      "Married",
+      "Single",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "consequat purus. Maecenas libero",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Camden",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-01-07T14:47:58Z"
+  },
+  {
+    "folder": "Asset Management",
+    "customer": "Lucius D. Maynard",
+    "title": "Porttitor Corporation",
+    "labels": [
+      "Divorced",
+      "Single",
+      "Married"
+    ],
+    "description": "Integer urna.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Callum",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-06-27T22:11:00Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Bernard Z. Stephenson",
+    "title": "Libero Morbi Company",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Married",
+      "Common-Law"
+    ],
+    "description": "ligula. Aenean",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Yolanda",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-07-29T03:17:59Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Ori C. Harmon",
+    "title": "Quam PC",
+    "labels": [
+      "Divorced",
+      "Single"
+    ],
+    "description": "Morbi quis urna. Nunc quis",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Tucker",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-11-09T19:29:36Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Teagan V. Stanton",
+    "title": "Natoque Penatibus LLC",
+    "labels": [
+      "Married",
+      "Single",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "ante bibendum ullamcorper. Duis",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Colt",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-10-21T06:33:12Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "MacKensie X. Becker",
+    "title": "Dolor Egestas Corp.",
+    "labels": [
+      "Single",
+      "Married",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "pede, malesuada vel, venenatis vel,",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Dylan",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-10-02T22:04:06Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Cullen L. Willis",
+    "title": "Mus Proin Limited",
+    "labels": [],
+    "description": "Duis sit",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Nomlanga",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-07-14T04:03:29Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Candice H. Caldwell",
+    "title": "Et Magnis Inc.",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Single"
+    ],
+    "description": "Integer tincidunt aliquam arcu. Aliquam",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Jenette",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-11-10T03:30:03Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Harriet H. Burns",
+    "title": "Ridiculus Mus Foundation",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "sem, vitae aliquam eros",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Samson",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-11-15T06:55:22Z"
+  },
+  {
+    "folder": "Sales and Marketing",
+    "customer": "Geoffrey C. Gates",
+    "title": "Eu Eleifend Foundation",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Single",
+      "Divorced"
+    ],
+    "description": "per conubia nostra, per inceptos",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Stacy",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-07-04T01:42:15Z"
+  },
+  {
+    "folder": "Asset Management",
+    "customer": "Benjamin P. Wyatt",
+    "title": "Sed Sem Egestas Institute",
+    "labels": [
+      "Married",
+      "Single",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "scelerisque neque sed",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Dara",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-06-13T02:50:08Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "Branden K. Colon",
+    "title": "Ac Mattis Industries",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "Donec tempus,",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Oscar",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-06-27T00:14:03Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Sybil R. Snow",
+    "title": "Erat Inc.",
+    "labels": [
+      "Single",
+      "Common-Law",
+      "Divorced",
+      "Married"
+    ],
+    "description": "tincidunt dui augue",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Donna",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-03-07T14:50:29Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "Ashton G. Weeks",
+    "title": "Elit Erat LLP",
+    "labels": [
+      "Common-Law",
+      "Married",
+      "Single",
+      "Divorced"
+    ],
+    "description": "vestibulum. Mauris magna.",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Risa",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-08-12T21:22:44Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Kato H. Combs",
+    "title": "In Magna Phasellus Ltd",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Married",
+      "Single"
+    ],
+    "description": "elementum sem, vitae",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Christopher",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-10-26T03:06:42Z"
+  },
+  {
+    "folder": "Asset Management",
+    "customer": "Morgan S. Mosley",
+    "title": "Ut Sem Nulla Company",
+    "labels": [
+      "Divorced"
+    ],
+    "description": "vitae",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Michelle",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-05-03T21:56:01Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Asher R. Turner",
+    "title": "Ut LLC",
+    "labels": [],
+    "description": "Mauris non",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer",
+    "inChargeOf": "Todd",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-07-08T13:19:39Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "TaShya Q. Mayo",
+    "title": "Arcu LLP",
+    "labels": [],
+    "description": "orci,",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Hasad",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-07-19T05:37:31Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Francesca Z. Patel",
+    "title": "Odio LLC",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "libero nec ligula consectetuer rhoncus.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Lacy",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-12-12T14:57:40Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Maia L. Ellison",
+    "title": "At Pretium Aliquet LLP",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Married",
+      "Common-Law"
+    ],
+    "description": "volutpat. Nulla dignissim. Maecenas",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Jescie",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-12-01T18:15:31Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Lucy H. Scott",
+    "title": "Tellus Suspendisse Associates",
+    "labels": [
+      "Divorced",
+      "Married",
+      "Common-Law",
+      "Single"
+    ],
+    "description": "Phasellus at augue id ante",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Keely",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-01-03T16:20:23Z"
+  },
+  {
+    "folder": "Media Relations",
+    "customer": "Quinlan B. Tillman",
+    "title": "Velit Foundation",
+    "labels": [
+      "Single",
+      "Divorced",
+      "Common-Law",
+      "Married"
+    ],
+    "description": "aliquet. Proin velit.",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Chava",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-05-03T23:48:29Z"
+  },
+  {
+    "folder": "Public Relations",
+    "customer": "Bradley C. Montgomery",
+    "title": "Eu Associates",
+    "labels": [
+      "Divorced",
+      "Married",
+      "Common-Law"
+    ],
+    "description": "nec ante. Maecenas mi felis,",
+    "notes": "Lorem",
+    "inChargeOf": "Catherine",
+    "accessType": "PRIVATE",
+    "createdAt": "2021-02-17T15:28:44Z"
+  },
+  {
+    "folder": "Human Resources",
+    "customer": "Ezra Z. Cotton",
+    "title": "Fermentum Metus Limited",
+    "labels": [
+      "Single",
+      "Married",
+      "Common-Law",
+      "Divorced"
+    ],
+    "description": "Phasellus in felis. Nulla tempor",
+    "notes": "Lorem",
+    "inChargeOf": "Keegan",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-10-12T01:24:09Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "Rafael S. Holland",
+    "title": "Nec Consulting",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Single",
+      "Married"
+    ],
+    "description": "nulla. Integer vulputate,",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Reuben",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-12-07T16:00:03Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Ian F. Rowland",
+    "title": "Arcu Sed Et Corp.",
+    "labels": [
+      "Single",
+      "Common-Law",
+      "Divorced"
+    ],
+    "description": "malesuada augue ut lacus. Nulla",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Fritz",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-12-19T13:55:38Z"
+  },
+  {
+    "folder": "Tech Support",
+    "customer": "Mohammad X. Richard",
+    "title": "Tellus Eu Augue Consulting",
+    "labels": [],
+    "description": "lacus.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Isaac",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-12-14T21:55:46Z"
+  },
+  {
+    "folder": "Tech Support",
+    "customer": "Irma R. Witt",
+    "title": "Nulla Company",
+    "labels": [
+      "Single",
+      "Married",
+      "Common-Law",
+      "Divorced"
+    ],
+    "description": "commodo",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Fletcher",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-09-14T18:06:48Z"
+  },
+  {
+    "folder": "Tech Support",
+    "customer": "Jasmine H. Gamble",
+    "title": "Magna Nam PC",
+    "labels": [
+      "Single",
+      "Married",
+      "Common-Law",
+      "Divorced"
+    ],
+    "description": "tempus risus. Donec egestas. Duis",
+    "notes": "Lorem ipsum dolor sit",
+    "inChargeOf": "Nerea",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-05-07T04:08:43Z"
+  },
+  {
+    "folder": "Finances",
+    "customer": "Kamal E. Richardson",
+    "title": "Convallis Dolor Quisque Incorporated",
+    "labels": [
+      "Divorced"
+    ],
+    "description": "sit amet, consectetuer adipiscing",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Curran",
+    "accessType": "PRIVATE",
+    "createdAt": "2019-04-23T11:39:08Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Hedda R. Alston",
+    "title": "Pede Sagittis Augue Company",
+    "labels": [
+      "Single",
+      "Common-Law",
+      "Married",
+      "Divorced"
+    ],
+    "description": "Nunc laoreet lectus",
+    "notes": "Lorem",
+    "inChargeOf": "Cynthia",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-08-03T08:02:03Z"
+  },
+  {
+    "folder": "Quality Assurance",
+    "customer": "Jordan O. Berger",
+    "title": "Ac LLP",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Married"
+    ],
+    "description": "tincidunt pede ac urna. Ut",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Sybill",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-07-28T14:23:59Z"
+  },
+  {
+    "folder": "Payroll",
+    "customer": "Reagan U. Rocha",
+    "title": "Cum Sociis Natoque Corporation",
+    "labels": [
+      "Married",
+      "Divorced",
+      "Single"
+    ],
+    "description": "consequat, lectus sit amet luctus",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "inChargeOf": "Keelie",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-02-11T07:11:42Z"
+  },
+  {
+    "folder": "Media Relations",
+    "customer": "Hasad D. Winters",
+    "title": "Donec Corp.",
+    "labels": [],
+    "description": "elementum, dui quis",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Uriel",
+    "accessType": "PUBLIC",
+    "createdAt": "2019-09-11T03:42:25Z"
+  },
+  {
+    "folder": "Accounting",
+    "customer": "Melinda T. Wynn",
+    "title": "Dignissim Industries",
+    "labels": [
+      "Common-Law"
+    ],
+    "description": "eu, eleifend nec, malesuada ut,",
+    "notes": "Lorem ipsum dolor",
+    "inChargeOf": "Joelle",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-05-16T20:30:59Z"
+  },
+  {
+    "folder": "Research and Development",
+    "customer": "Lara D. Lloyd",
+    "title": "Dictum Foundation",
+    "labels": [
+      "Married",
+      "Single",
+      "Divorced",
+      "Common-Law"
+    ],
+    "description": "id",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+    "inChargeOf": "Hope",
+    "accessType": "PRIVATE",
+    "createdAt": "2020-09-30T04:36:37Z"
+  },
+  {
+    "folder": "Legal Department",
+    "customer": "MacKenzie C. Vega",
+    "title": "Nunc Corp.",
+    "labels": [
+      "Married",
+      "Single",
+      "Common-Law",
+      "Divorced"
+    ],
+    "description": "dolor. Donec fringilla. Donec feugiat",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
+    "inChargeOf": "Cairo",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-11-02T22:00:09Z"
+  },
+  {
+    "folder": "Tech Support",
+    "customer": "Christian S. Potts",
+    "title": "Et Pede Corp.",
+    "labels": [
+      "Common-Law",
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "libero",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Farrah",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-06-24T07:02:27Z"
+  },
+  {
+    "folder": "Advertising",
+    "customer": "Quamar P. Irwin",
+    "title": "Mauris Erat PC",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "diam lorem, auctor quis,",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Brian",
+    "accessType": "PUBLIC",
+    "createdAt": "2020-01-25T17:18:54Z"
+  }
+]
