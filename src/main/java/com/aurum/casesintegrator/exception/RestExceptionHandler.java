@@ -49,6 +49,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, errors));
     }
 
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Object> handleIllegalArgumentException(final IllegalArgumentException e) {
+        return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, Set.of(e.getMessage())));
+    }
+
     private ResponseEntity<Object> buildResponseEntity(final ApiError apiError) {
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }

@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.management.InstanceAlreadyExistsException;
@@ -24,7 +25,7 @@ import com.aurum.casesintegrator.domain.Case;
 import com.aurum.casesintegrator.repository.CaseRepository;
 
 @SpringBootTest
-@DisplayName("[CaseService] - Test cases for Legal Cases Services")
+@DisplayName("[CaseService] - Unit Tests for Cases Services")
 public class CaseServiceTest {
 
     @Autowired
@@ -101,6 +102,47 @@ public class CaseServiceTest {
         assertThat(createdCases).hasSize(expectedCasesNumber);
         assertThat(createdCases).isNotNull();
         assertThat(createdCases.stream().findFirst().get().getId()).isNotNull();
+    }
+
+    @Test
+    public void updateAllFields_shouldUpdateAllFields() {
+        /* Given */
+        final Case caseToUpdate = new Case(1L,
+                "O34398",
+                "Clayton",
+                "Some case",
+                Set.of("important"),
+                "Some description",
+                "Is someone getting the best of you...",
+                "SRV",
+                AccessType.PUBLIC,
+                LocalDateTime.now()
+        );
+        given(this.caseRepository.findById(caseToUpdate.getId())).willReturn(Optional.of(caseToUpdate));
+
+        /* When */
+        this.caseService.updateAllFields(caseToUpdate);
+
+        /* Then */
+        verify(this.caseRepository).save(caseToUpdate);
+    }
+
+    @Test
+    public void updateAllFields_shouldThrowAnIllegalArgumentExceptionCaseNotExists() {
+        final Case caseToUpdate = new Case(1L,
+                "O34398",
+                "Clayton",
+                "Some case",
+                Set.of("important"),
+                "Some description",
+                "Is someone getting the best of you...",
+                "SRV",
+                AccessType.PUBLIC,
+                LocalDateTime.now()
+        );
+        given(this.caseRepository.findById(caseToUpdate.getId())).willReturn(Optional.empty());
+
+        assertThrows(IllegalArgumentException.class, () -> this.caseService.updateAllFields(caseToUpdate));
     }
 
     private ArrayList<Case> getMockedDuplicatedCases(long sameId) {

@@ -5,10 +5,12 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -38,7 +40,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest(CaseController.class)
-@DisplayName("[CaseController] - Test cases for Case Controller")
+@DisplayName("[CaseController] - Unit Tests for Case Controller")
 public class CaseControllerTest {
 
     private static final String TARGET_RELATIVE_PATH = "/v1/cases";
@@ -167,14 +169,37 @@ public class CaseControllerTest {
     @Test
     public void create_shouldCallServiceThrowingAnInstanceAlreadyExistsExceptionAndReturnConflictStatusCode() throws Exception {
         final String jsonRequest = FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json");
-        final Case expectedCaseFromService = mapper.readValue(jsonRequest, new TypeReference<>() {
-        });
+        final Case expectedCaseFromService = mapper.readValue(jsonRequest, new TypeReference<>() {});
         given(this.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(expectedCaseFromService));
         given(this.caseService.create(List.of(expectedCaseFromService))).willThrow(new InstanceAlreadyExistsException("Case already exists on database."));
 
         this.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isConflict())
                 .andExpect(jsonPath("$.messages[0]", is("Case already exists on database.")));
+    }
+
+    @Test
+    public void update_shouldCallServiceToUpdateAllCaseFields() throws Exception {
+        final String jsonRequest = FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json");
+        this.mockMvc.perform(put(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
+    public void update_shouldReturnBadRequestRequiredFieldsAreEmpty() throws Exception {
+        final String jsonRequest = "{\"id\": 123456, \"customer\": \"Mike\"}";
+        this.mockMvc.perform(put(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void update_shouldCallServiceThrowingIllegalArgumentExceptionAndReturnBadRequestStatus() throws Exception {
+        final String jsonRequest = FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json");
+        final Case caseToUpdate = mapper.readValue(jsonRequest, new TypeReference<>(){});
+        doThrow(new IllegalArgumentException("Field id must be filled.")).when(this.caseService).updateAllFields(caseToUpdate);
+
+        this.mockMvc.perform(put(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(status().isBadRequest());
     }
 
 }

@@ -40,14 +40,24 @@ public class CaseService {
     }
 
     public List<Case> getExtractedCasesFrom(final String singleOrMultiple) {
-        final List<Case> multipleCases = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {
-        });
+        final List<Case> multipleCases = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {});
         if (multipleCases != null) {
             return multipleCases;
         }
-        final Case singleCase = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {
-        });
+        final Case singleCase = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {});
         return singleCase != null ? List.of(singleCase) : List.of();
+    }
+
+    public void updateAllFields(final Case newCaseData) {
+        if (newCaseData.getId() == null) {
+            throw new IllegalArgumentException("Field id must be filled.");
+        }
+
+        if (!this.caseRepository.findById(newCaseData.getId()).isPresent()) {
+            throw new IllegalArgumentException("Case not found on database.");
+        }
+
+        this.caseRepository.save(newCaseData);
     }
 
     private List<Case> findAllById(Set<Long> ids) {
