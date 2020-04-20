@@ -15,7 +15,7 @@ public class JsonUtil {
         try {
             return MAPPER.readValue(json, typeReference);
         } catch (JsonProcessingException e) {
-            log.error("Could not convert string to JSON.", e);
+            log.error("Could not convert string to JSON.");
         }
         return null;
     }

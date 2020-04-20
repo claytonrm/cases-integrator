@@ -12,8 +12,7 @@
     "description": "lacus. Cras interdum. Nunc",
     "notes": "Lorem ipsum",
     "inChargeOf": "Jana",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-08-05T01:21:08Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -27,8 +26,7 @@
     "description": "pede nec ante",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Lana",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-02-05T14:45:41Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Payroll",
@@ -42,8 +40,7 @@
     "description": "libero est, congue",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Owen",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-12-31T08:42:56Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Customer Service",
@@ -58,8 +55,7 @@
     "description": "tempor",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "inChargeOf": "Kyle",
-    "accessType": "PUBLIC",
-    "createdAt": "2021-03-08T05:34:41Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Quality Assurance",
@@ -74,8 +70,7 @@
     "description": "dolor quam, elementum",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Lara",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-07-11T10:59:18Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Customer Relations",
@@ -90,8 +85,7 @@
     "description": "ac ipsum. Phasellus vitae mauris",
     "notes": "Lorem",
     "inChargeOf": "Chelsea",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-05-06T01:44:35Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Human Resources",
@@ -106,8 +100,7 @@
     "description": "primis in faucibus orci",
     "notes": "Lorem",
     "inChargeOf": "Gavin",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-04-15T11:20:13Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Human Resources",
@@ -119,8 +112,7 @@
     "description": "justo eu arcu. Morbi sit",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Louis",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-12-16T13:31:50Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Asset Management",
@@ -135,8 +127,7 @@
     "description": "Duis ac arcu. Nunc",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Idona",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-11-11T19:53:51Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Finances",
@@ -149,8 +140,7 @@
     "description": "magna. Duis dignissim tempor arcu.",
     "notes": "Lorem ipsum",
     "inChargeOf": "Aiko",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-03-19T03:29:37Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Research and Development",
@@ -165,8 +155,7 @@
     "description": "porttitor interdum. Sed auctor",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Sean",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-07-22T08:50:57Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Finances",
@@ -181,8 +170,7 @@
     "description": "Donec feugiat",
     "notes": "Lorem ipsum",
     "inChargeOf": "Charles",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-06-05T14:41:46Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Accounting",
@@ -197,8 +185,7 @@
     "description": "pede, ultrices a, auctor non,",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Chancellor",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-06-03T19:50:22Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Tech Support",
@@ -211,8 +198,7 @@
     "description": "vel",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Allegra",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-02-19T08:04:56Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Sales and Marketing",
@@ -227,8 +213,7 @@
     "description": "purus. Nullam",
     "notes": "Lorem ipsum",
     "inChargeOf": "Nasim",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-02-10T16:35:15Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -242,8 +227,7 @@
     "description": "Suspendisse",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Kermit",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-10-18T10:56:37Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -258,8 +242,7 @@
     "description": "orci.",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Len",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-01-11T00:07:42Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Tech Support",
@@ -274,8 +257,7 @@
     "description": "arcu. Vestibulum ut eros",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Naomi",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-06-27T00:17:04Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Research and Development",
@@ -290,8 +272,7 @@
     "description": "metus urna convallis",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Justin",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-01-30T08:50:29Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Accounting",
@@ -306,8 +287,7 @@
     "description": "lorem, eget mollis lectus pede",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Akeem",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-11-01T12:57:25Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Payroll",
@@ -322,8 +302,7 @@
     "description": "ultrices. Vivamus",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Naomi",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-11-17T10:57:59Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Media Relations",
@@ -336,8 +315,7 @@
     "description": "nisi dictum augue malesuada",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Xavier",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-12-19T04:17:19Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Legal Department",
@@ -351,8 +329,7 @@
     "description": "ridiculus",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Wilma",
-    "accessType": "PUBLIC",
-    "createdAt": "2021-03-05T07:13:59Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -367,8 +344,7 @@
     "description": "sit amet diam",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Chastity",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-03-10T07:41:08Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -380,8 +356,7 @@
     "description": "Cum sociis",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Wanda",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-07-15T20:16:27Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -394,8 +369,7 @@
     "description": "euismod in, dolor. Fusce",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Marsden",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-11-11T14:28:42Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Advertising",
@@ -410,8 +384,7 @@
     "description": "eu, eleifend nec, malesuada ut,",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Jacqueline",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-09-29T18:15:56Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Accounting",
@@ -424,8 +397,7 @@
     "description": "et netus et malesuada fames",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "inChargeOf": "Trevor",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-10-10T06:44:37Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Legal Department",
@@ -440,8 +412,7 @@
     "description": "molestie. Sed id risus",
     "notes": "Lorem",
     "inChargeOf": "Nicole",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-08-07T02:54:32Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Payroll",
@@ -456,8 +427,7 @@
     "description": "risus. Morbi metus.",
     "notes": "Lorem",
     "inChargeOf": "Kenyon",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-06-12T17:22:59Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Finances",
@@ -472,8 +442,7 @@
     "description": "lobortis augue scelerisque",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Kim",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-02-27T03:40:19Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Asset Management",
@@ -488,8 +457,7 @@
     "description": "augue eu tellus. Phasellus elit",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Glenna",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-11-28T23:01:29Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Research and Development",
@@ -504,8 +472,7 @@
     "description": "arcu. Aliquam ultrices iaculis odio.",
     "notes": "Lorem",
     "inChargeOf": "Neville",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-02-24T16:25:06Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Legal Department",
@@ -519,8 +486,7 @@
     "description": "in",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "inChargeOf": "Judah",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-03-28T23:42:10Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Customer Service",
@@ -534,8 +500,7 @@
     "description": "mattis ornare, lectus",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Octavia",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-12-20T13:18:53Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Payroll",
@@ -550,8 +515,7 @@
     "description": "porta elit, a",
     "notes": "Lorem ipsum",
     "inChargeOf": "Angelica",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-01-22T14:36:04Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Human Resources",
@@ -566,8 +530,7 @@
     "description": "dolor. Quisque",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "inChargeOf": "Jorden",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-04-20T03:33:17Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Sales and Marketing",
@@ -582,8 +545,7 @@
     "description": "non massa",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Keane",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-03-23T04:28:28Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Accounting",
@@ -598,8 +560,7 @@
     "description": "vel,",
     "notes": "Lorem",
     "inChargeOf": "Janna",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-08-04T16:13:59Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Finances",
@@ -614,8 +575,7 @@
     "description": "vitae,",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Charissa",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-03-06T19:16:49Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Accounting",
@@ -630,8 +590,7 @@
     "description": "metus vitae velit egestas lacinia.",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Nevada",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-05-12T16:38:34Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Customer Service",
@@ -645,8 +604,7 @@
     "description": "Fusce mi",
     "notes": "Lorem",
     "inChargeOf": "Akeem",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-02-04T11:16:18Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -660,8 +618,7 @@
     "description": "eu arcu.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Ori",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-01-10T23:34:49Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Customer Relations",
@@ -676,8 +633,7 @@
     "description": "sed pede. Cum sociis",
     "notes": "Lorem",
     "inChargeOf": "Castor",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-05-22T22:29:24Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -692,8 +648,7 @@
     "description": "nisi. Mauris",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Iona",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-03-07T02:03:36Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -708,8 +663,7 @@
     "description": "pharetra ut, pharetra sed,",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Brett",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-10-21T17:34:46Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Public Relations",
@@ -719,8 +673,7 @@
     "description": "vitae, orci. Phasellus dapibus",
     "notes": "Lorem ipsum",
     "inChargeOf": "Hope",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-10-21T02:25:44Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Finances",
@@ -732,8 +685,7 @@
     "description": "purus mauris a nunc. In",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Levi",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-06-14T16:34:22Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -748,8 +700,7 @@
     "description": "eget, dictum",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Ina",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-10-15T08:47:48Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -762,8 +713,7 @@
     "description": "bibendum. Donec felis",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Joel",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-01-27T10:36:53Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Legal Department",
@@ -776,8 +726,7 @@
     "description": "Nunc ac sem",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Jerome",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-03-20T10:02:25Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -792,8 +741,7 @@
     "description": "lobortis ultrices. Vivamus rhoncus. Donec",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Flynn",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-06-21T05:09:52Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Accounting",
@@ -808,8 +756,7 @@
     "description": "tempor, est ac mattis",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Myles",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-09-03T12:58:17Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Legal Department",
@@ -824,8 +771,7 @@
     "description": "vel,",
     "notes": "Lorem",
     "inChargeOf": "Wynne",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-06-21T07:04:25Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Customer Service",
@@ -840,8 +786,7 @@
     "description": "Mauris molestie pharetra nibh.",
     "notes": "Lorem",
     "inChargeOf": "Simone",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-04-06T00:13:13Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Quality Assurance",
@@ -856,8 +801,7 @@
     "description": "pede.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Rogan",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-11-15T19:01:57Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Advertising",
@@ -869,8 +813,7 @@
     "description": "et tristique pellentesque, tellus sem",
     "notes": "Lorem ipsum",
     "inChargeOf": "Giacomo",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-04-04T06:55:32Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -884,8 +827,7 @@
     "description": "Aenean sed pede nec ante",
     "notes": "Lorem",
     "inChargeOf": "Tamara",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-04-24T04:29:10Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Research and Development",
@@ -900,8 +842,7 @@
     "description": "diam eu dolor egestas rhoncus.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Harlan",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-05-02T11:19:25Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Research and Development",
@@ -911,8 +852,7 @@
     "description": "neque et nunc.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Colleen",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-12-24T17:15:54Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Advertising",
@@ -927,8 +867,7 @@
     "description": "Proin non",
     "notes": "Lorem ipsum",
     "inChargeOf": "Tyrone",
-    "accessType": "PUBLIC",
-    "createdAt": "2021-03-21T17:13:24Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Legal Department",
@@ -943,8 +882,7 @@
     "description": "consequat purus. Maecenas libero",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Camden",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-01-07T14:47:58Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Asset Management",
@@ -958,8 +896,7 @@
     "description": "Integer urna.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Callum",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-06-27T22:11:00Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -974,8 +911,7 @@
     "description": "ligula. Aenean",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Yolanda",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-07-29T03:17:59Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Research and Development",
@@ -988,8 +924,7 @@
     "description": "Morbi quis urna. Nunc quis",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Tucker",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-11-09T19:29:36Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -1004,8 +939,7 @@
     "description": "ante bibendum ullamcorper. Duis",
     "notes": "Lorem ipsum",
     "inChargeOf": "Colt",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-10-21T06:33:12Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Research and Development",
@@ -1020,8 +954,7 @@
     "description": "pede, malesuada vel, venenatis vel,",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "inChargeOf": "Dylan",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-10-02T22:04:06Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Payroll",
@@ -1031,8 +964,7 @@
     "description": "Duis sit",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Nomlanga",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-07-14T04:03:29Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Payroll",
@@ -1046,8 +978,7 @@
     "description": "Integer tincidunt aliquam arcu. Aliquam",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Jenette",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-11-10T03:30:03Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -1062,8 +993,7 @@
     "description": "sem, vitae aliquam eros",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Samson",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-11-15T06:55:22Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Sales and Marketing",
@@ -1078,8 +1008,7 @@
     "description": "per conubia nostra, per inceptos",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Stacy",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-07-04T01:42:15Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Asset Management",
@@ -1094,8 +1023,7 @@
     "description": "scelerisque neque sed",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Dara",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-06-13T02:50:08Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Advertising",
@@ -1110,8 +1038,7 @@
     "description": "Donec tempus,",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Oscar",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-06-27T00:14:03Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -1126,8 +1053,7 @@
     "description": "tincidunt dui augue",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Donna",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-03-07T14:50:29Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Legal Department",
@@ -1142,8 +1068,7 @@
     "description": "vestibulum. Mauris magna.",
     "notes": "Lorem ipsum",
     "inChargeOf": "Risa",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-08-12T21:22:44Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Finances",
@@ -1158,8 +1083,7 @@
     "description": "elementum sem, vitae",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Christopher",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-10-26T03:06:42Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Asset Management",
@@ -1171,8 +1095,7 @@
     "description": "vitae",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Michelle",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-05-03T21:56:01Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Finances",
@@ -1182,8 +1105,7 @@
     "description": "Mauris non",
     "notes": "Lorem ipsum dolor sit amet, consectetuer",
     "inChargeOf": "Todd",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-07-08T13:19:39Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Advertising",
@@ -1193,8 +1115,7 @@
     "description": "orci,",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Hasad",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-07-19T05:37:31Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -1209,8 +1130,7 @@
     "description": "libero nec ligula consectetuer rhoncus.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Lacy",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-12-12T14:57:40Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Payroll",
@@ -1225,8 +1145,7 @@
     "description": "volutpat. Nulla dignissim. Maecenas",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Jescie",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-12-01T18:15:31Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -1241,8 +1160,7 @@
     "description": "Phasellus at augue id ante",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
     "inChargeOf": "Keely",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-01-03T16:20:23Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Media Relations",
@@ -1257,8 +1175,7 @@
     "description": "aliquet. Proin velit.",
     "notes": "Lorem ipsum",
     "inChargeOf": "Chava",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-05-03T23:48:29Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Public Relations",
@@ -1272,8 +1189,7 @@
     "description": "nec ante. Maecenas mi felis,",
     "notes": "Lorem",
     "inChargeOf": "Catherine",
-    "accessType": "PRIVATE",
-    "createdAt": "2021-02-17T15:28:44Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Human Resources",
@@ -1288,8 +1204,7 @@
     "description": "Phasellus in felis. Nulla tempor",
     "notes": "Lorem",
     "inChargeOf": "Keegan",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-10-12T01:24:09Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Advertising",
@@ -1304,8 +1219,7 @@
     "description": "nulla. Integer vulputate,",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Reuben",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-12-07T16:00:03Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -1319,8 +1233,7 @@
     "description": "malesuada augue ut lacus. Nulla",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Fritz",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-12-19T13:55:38Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Tech Support",
@@ -1330,8 +1243,7 @@
     "description": "lacus.",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Isaac",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-12-14T21:55:46Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Tech Support",
@@ -1346,8 +1258,7 @@
     "description": "commodo",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Fletcher",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-09-14T18:06:48Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Tech Support",
@@ -1362,8 +1273,7 @@
     "description": "tempus risus. Donec egestas. Duis",
     "notes": "Lorem ipsum dolor sit",
     "inChargeOf": "Nerea",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-05-07T04:08:43Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Finances",
@@ -1375,8 +1285,7 @@
     "description": "sit amet, consectetuer adipiscing",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Curran",
-    "accessType": "PRIVATE",
-    "createdAt": "2019-04-23T11:39:08Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Research and Development",
@@ -1391,8 +1300,7 @@
     "description": "Nunc laoreet lectus",
     "notes": "Lorem",
     "inChargeOf": "Cynthia",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-08-03T08:02:03Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Quality Assurance",
@@ -1406,8 +1314,7 @@
     "description": "tincidunt pede ac urna. Ut",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Sybill",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-07-28T14:23:59Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Payroll",
@@ -1421,8 +1328,7 @@
     "description": "consequat, lectus sit amet luctus",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "inChargeOf": "Keelie",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-02-11T07:11:42Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Media Relations",
@@ -1432,8 +1338,7 @@
     "description": "elementum, dui quis",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Uriel",
-    "accessType": "PUBLIC",
-    "createdAt": "2019-09-11T03:42:25Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Accounting",
@@ -1445,8 +1350,7 @@
     "description": "eu, eleifend nec, malesuada ut,",
     "notes": "Lorem ipsum dolor",
     "inChargeOf": "Joelle",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-05-16T20:30:59Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Research and Development",
@@ -1461,8 +1365,7 @@
     "description": "id",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
     "inChargeOf": "Hope",
-    "accessType": "PRIVATE",
-    "createdAt": "2020-09-30T04:36:37Z"
+    "accessType": "PRIVATE"
   },
   {
     "folder": "Legal Department",
@@ -1477,8 +1380,7 @@
     "description": "dolor. Donec fringilla. Donec feugiat",
     "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "inChargeOf": "Cairo",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-11-02T22:00:09Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Tech Support",
@@ -1493,8 +1395,7 @@
     "description": "libero",
     "notes": "Lorem ipsum dolor sit amet,",
     "inChargeOf": "Farrah",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-06-24T07:02:27Z"
+    "accessType": "PUBLIC"
   },
   {
     "folder": "Advertising",
@@ -1509,7 +1410,6 @@
     "description": "diam lorem, auctor quis,",
     "notes": "Lorem ipsum",
     "inChargeOf": "Brian",
-    "accessType": "PUBLIC",
-    "createdAt": "2020-01-25T17:18:54Z"
+    "accessType": "PUBLIC"
   }
 ]

@@ -4,15 +4,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
-import java.time.LocalDateTime;
-import java.util.Optional;
-import java.util.Set;
+import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.aurum.casesintegrator.domain.AccessType;
 import com.aurum.casesintegrator.domain.Case;
+import com.aurum.casesintegrator.util.DateUtil;
+
+import reactor.core.publisher.Mono;
 
 @DisplayName("[CaseService] - Unit Tests for update Cases")
 public class CaseServiceUpdateTest extends CaseServiceBaseTest {
@@ -20,18 +21,18 @@ public class CaseServiceUpdateTest extends CaseServiceBaseTest {
     @Test
     public void updateAllFields_shouldUpdateAllFields() {
         /* Given */
-        final Case caseToUpdate = new Case(1L,
+        final Case caseToUpdate = new Case("1",
                 "O34398",
                 "Clayton",
                 "Some case",
-                Set.of("important"),
+                List.of("important"),
                 "Some description",
                 "Is someone getting the best of you...",
                 "SRV",
                 AccessType.PUBLIC,
-                LocalDateTime.now()
+                DateUtil.getCurrentDateInstantZero()
         );
-        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Optional.of(caseToUpdate));
+        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.just(caseToUpdate));
 
         /* When */
         super.caseService.updateAllFields(caseToUpdate);
@@ -42,18 +43,18 @@ public class CaseServiceUpdateTest extends CaseServiceBaseTest {
 
     @Test
     public void updateAllFields_shouldThrowAnIllegalArgumentExceptionCaseNotExists() {
-        final Case caseToUpdate = new Case(1L,
+        final Case caseToUpdate = new Case("1",
                 "O34398",
                 "Clayton",
                 "Some case",
-                Set.of("important"),
+                List.of("important"),
                 "Some description",
                 "Is someone getting the best of you...",
                 "SRV",
                 AccessType.PUBLIC,
-                LocalDateTime.now()
+                DateUtil.getCurrentDateInstantZero()
         );
-        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Optional.empty());
+        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.empty());
 
         assertThrows(IllegalArgumentException.class, () -> super.caseService.updateAllFields(caseToUpdate));
     }

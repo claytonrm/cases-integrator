@@ -5,26 +5,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import javax.management.InstanceAlreadyExistsException;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.aurum.casesintegrator.domain.AccessType;
 import com.aurum.casesintegrator.domain.Case;
-import com.aurum.casesintegrator.repository.CaseRepository;
+import com.aurum.casesintegrator.util.DateUtil;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @DisplayName("[CaseService] - Unit Tests for create Cases")
 public class CaseServiceCreateTest extends CaseServiceBaseTest {
@@ -36,18 +31,18 @@ public class CaseServiceCreateTest extends CaseServiceBaseTest {
                 "O34398",
                 "Clayton",
                 "Some case",
-                Set.of("important"),
+                List.of("important"),
                 "Some description",
                 "Is someone getting the best of you...",
                 "SRV",
                 AccessType.PUBLIC,
-                LocalDateTime.now())
+                DateUtil.getCurrentDateInstantZero())
         );
         final Case singleCase = cases.stream().findFirst().get();
 
         given(super.caseRepository.saveAll(cases)).willReturn(
-                List.of(
-                        new Case(1L,
+                Flux.just(
+                        new Case("1",
                                 singleCase.getFolder(),
                                 singleCase.getCustomer(),
                                 singleCase.getTitle(),
@@ -56,25 +51,25 @@ public class CaseServiceCreateTest extends CaseServiceBaseTest {
                                 singleCase.getNotes(),
                                 singleCase.getInChargeOf(),
                                 singleCase.getAccessType(),
-                                singleCase.getCreatedAt()
+                                singleCase.getCreatedAtInstant()
                         )
                 )
         );
 
         /* When */
-        final List<Case> createdCases = super.caseService.create(cases);
+        final Flux<Case> createdCases = super.caseService.create(cases);
 
         /* Then */
         verify(super.caseRepository).saveAll(cases);
         assertThat(createdCases).isNotNull();
-        assertThat(createdCases.stream().findFirst().get().getId()).isNotNull();
+        assertThat(createdCases.blockFirst().getId()).isNotNull();
     }
 
     @Test
     public void create_shouldCallRepositoryAndThrowConflictErrorIdAlreadyExists() {
-        final long sameId = 1L;
+        final String sameId = "1";
         final List<Case> duplicatedCases = getMockedDuplicatedCases(sameId);
-        given(super.caseRepository.findAllById(Set.of(sameId))).willReturn(Arrays.asList(duplicatedCases.get(0)));
+        given(super.caseRepository.findAllById(Set.of(sameId))).willReturn(Flux.just(duplicatedCases.get(0)));
 
         assertThrows(InstanceAlreadyExistsException.class, () -> super.caseService.create(duplicatedCases));
     }
@@ -82,38 +77,38 @@ public class CaseServiceCreateTest extends CaseServiceBaseTest {
     @Test
     public void create_shouldCallRepositoryToSaveOnlyOneCase() throws InstanceAlreadyExistsException {
         /* Given */
-        final long sameId = 1L;
+        final String sameId = "1";
         final int expectedCasesNumber = getMockedDuplicatedCases(sameId).size();
         final List<Case> duplicatedCases = getMockedDuplicatedCases(sameId);
         final Case originalCase = duplicatedCases.get(0);
-        given(super.caseRepository.findAllById(Set.of(sameId))).willReturn(List.of());
-        given(super.caseRepository.save(originalCase)).willReturn(originalCase);
+        given(super.caseRepository.findAllById(Set.of(sameId))).willReturn(Flux.empty());
+        given(super.caseRepository.save(originalCase)).willReturn(Mono.just(originalCase));
 
         /* When */
-        final List<Case> createdCases = super.caseService.create(duplicatedCases);
+        final Flux<Case> createdCases = super.caseService.create(duplicatedCases);
 
         /* Then */
         verify(super.caseRepository).save(originalCase);
-        assertThat(createdCases).hasSize(expectedCasesNumber);
+        assertThat(createdCases.toStream()).hasSize(expectedCasesNumber);
         assertThat(createdCases).isNotNull();
-        assertThat(createdCases.stream().findFirst().get().getId()).isNotNull();
+        assertThat(createdCases.blockFirst().getId()).isNotNull();
     }
 
     @Test
-    public void updateAllFields_shouldUpdateAllFields() {
+    public void updateAllFields_shouldCallRepositoryToUpdateAllFields() {
         /* Given */
-        final Case caseToUpdate = new Case(1L,
+        final Case caseToUpdate = new Case("1",
                 "O34398",
                 "Clayton",
                 "Some case",
-                Set.of("important"),
+                List.of("important"),
                 "Some description",
                 "Is someone getting the best of you...",
                 "SRV",
                 AccessType.PUBLIC,
-                LocalDateTime.now()
+                DateUtil.getCurrentDateInstantZero()
         );
-        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Optional.of(caseToUpdate));
+        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.just(caseToUpdate));
 
         /* When */
         super.caseService.updateAllFields(caseToUpdate);
@@ -124,56 +119,56 @@ public class CaseServiceCreateTest extends CaseServiceBaseTest {
 
     @Test
     public void updateAllFields_shouldThrowAnIllegalArgumentExceptionCaseNotExists() {
-        final Case caseToUpdate = new Case(1L,
+        final Case caseToUpdate = new Case("1",
                 "O34398",
                 "Clayton",
                 "Some case",
-                Set.of("important"),
+                List.of("important"),
                 "Some description",
                 "Is someone getting the best of you...",
                 "SRV",
                 AccessType.PUBLIC,
-                LocalDateTime.now()
+                DateUtil.getCurrentDateInstantZero()
         );
-        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Optional.empty());
+        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.empty());
 
         assertThrows(IllegalArgumentException.class, () -> super.caseService.updateAllFields(caseToUpdate));
     }
 
-    private ArrayList<Case> getMockedDuplicatedCases(long sameId) {
+    private ArrayList<Case> getMockedDuplicatedCases(final String sameId) {
         return new ArrayList<>(List.of(
-                new Case(1L,
+                new Case(sameId,
                         "O34398",
                         "Clayton",
                         "Some case",
-                        Set.of("important"),
+                        List.of("important"),
                         "Some description",
                         "Is someone getting the best of you...",
                         "SRV",
                         AccessType.PUBLIC,
-                        LocalDateTime.now()
+                        DateUtil.getCurrentDateInstantZero()
                 ),
                 new Case(sameId,
                         "O34398",
                         "Ribeiro",
                         "Some case",
-                        Set.of("black"),
+                        List.of("black"),
                         "Some description",
                         "Is someone getting the best of you...",
                         "SRV",
                         AccessType.PUBLIC,
-                        LocalDateTime.now()
+                        DateUtil.getCurrentDateInstantZero()
                 ),
                 new Case(sameId,
                         "O34398",
                         "Mendonça",
                         "Some case",
-                        Set.of("black"),
+                        List.of("black"),
                         "Some description",
                         "Is someone getting the best of you...",
                         "SRV",
                         AccessType.PUBLIC,
-                        LocalDateTime.now()
+                        DateUtil.getCurrentDateInstantZero()
                 )
         ));
     }

@@ -14,7 +14,7 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResourceCreatedResponse {
 
-    private Long id;
+    private String id;
     private String uri;
     private HttpStatus status;
     private LocalDateTime createdAt;

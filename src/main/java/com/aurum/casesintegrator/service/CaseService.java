@@ -1,42 +1,38 @@
 package com.aurum.casesintegrator.service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.management.InstanceAlreadyExistsException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.aurum.casesintegrator.domain.Case;
+import com.aurum.casesintegrator.domain.CaseCriteria;
 import com.aurum.casesintegrator.repository.CaseRepository;
-import com.aurum.casesintegrator.util.Constants;
+import com.aurum.casesintegrator.service.strategy.Criteria;
+import com.aurum.casesintegrator.service.strategy.factory.FilterCriteria;
+import com.aurum.casesintegrator.service.strategy.factory.FilterCriteriaFactory;
 import com.aurum.casesintegrator.util.JsonUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
+
+import reactor.core.publisher.Flux;
 
 @Service
 public class CaseService {
 
     private final CaseRepository caseRepository;
+    private final BatchCaseService batchCaseService;
 
     @Autowired
-    public CaseService(final CaseRepository caseRepository) {
+    public CaseService(final CaseRepository caseRepository, final BatchCaseService batchCaseService) {
         this.caseRepository = caseRepository;
+        this.batchCaseService = batchCaseService;
     }
 
-    public List<Case> create(final List<Case> cases) throws InstanceAlreadyExistsException {
-        final Set<Long> idsAlreadyFilled = cases.stream().filter(c -> c.getId() != null).map(Case::getId).collect(Collectors.toSet());
-        if (idsAlreadyFilled.isEmpty()) {
-            return this.saveAll(cases);
-        }
-
-        final List<Case> originalCases = new ArrayList<>(cases);
-        this.removeCaseConflicts(cases);
-        this.verifyAlreadyExistingCases(cases, idsAlreadyFilled);
-        return this.saveAndFetchAll(cases, originalCases);
+    public Flux<Case> create(final List<Case> cases) throws InstanceAlreadyExistsException {
+        return this.batchCaseService.create(cases);
     }
 
     public List<Case> getExtractedCasesFrom(final String singleOrMultiple) {
@@ -53,52 +49,25 @@ public class CaseService {
             throw new IllegalArgumentException("Field id must be filled.");
         }
 
-        if (!this.caseRepository.findById(newCaseData.getId()).isPresent()) {
+        if (this.caseRepository.findById(newCaseData.getId()).blockOptional().isEmpty()) {
             throw new IllegalArgumentException("Case not found on database.");
         }
 
         this.caseRepository.save(newCaseData);
     }
 
-    private List<Case> findAllById(Set<Long> ids) {
-        final List<Case> foundCases = new ArrayList<>();
-        this.caseRepository.findAllById(ids).iterator().forEachRemaining(foundCases::add);
-        return foundCases;
-    }
+    public Flux<Case> findByCriteria(final CaseCriteria caseCriteria) {
+        final FilterCriteriaFactory criteriaFactory = new FilterCriteriaFactory(this.caseRepository);
+        final FilterCriteria criteria = criteriaFactory.getCriteria(caseCriteria);
+        final Flux<Case> filteredCases = new Criteria(criteria).filter()
+                .filter(c -> caseCriteria.getFolder() == null || c.getFolder().toLowerCase().contains(caseCriteria.getFolder().toLowerCase()))
+                .filter(c -> caseCriteria.getTitle() == null || c.getTitle().toLowerCase().contains(caseCriteria.getTitle().toLowerCase()))
+                .parallel().sequential();
 
-    private void removeCaseConflicts(final List<Case> cases) {
-        final Set<Long> uniqueIds = new HashSet<>();
-        final List<Case> casesToRemove = cases.stream().filter(c -> c.getId() != null && !uniqueIds.add(c.getId())).collect(Collectors.toList());
-        cases.removeAll(casesToRemove);
-    }
-
-    private void verifyAlreadyExistingCases(final List<Case> cases, final Set<Long> idsAlreadyFilled) throws InstanceAlreadyExistsException {
-        final List<Case> foundCases = this.findAllById(idsAlreadyFilled);
-        cases.removeIf(c -> foundCases.stream().anyMatch(foundCase -> foundCase.getId().equals(c.getId())));
-        if (cases.isEmpty() && idsAlreadyFilled.size() == Constants.SINGLE_CASE) {
-            throw new InstanceAlreadyExistsException("Case already exists on database.");
+        if (StringUtils.isEmpty(caseCriteria.getDescription())) {
+            return filteredCases;
         }
-    }
-
-    private List<Case> saveAndFetchAll(final List<Case> cases, final List<Case> originalCases) {
-        return originalCases.stream().map(c -> cases.contains(c) ? this.caseRepository.save(c) : new Case(
-                null,
-                c.getFolder(),
-                c.getCustomer(),
-                c.getTitle(),
-                c.getLabels(),
-                c.getDescription(),
-                c.getNotes(),
-                c.getInChargeOf(),
-                c.getAccessType(),
-                c.getCreatedAt()
-        )).collect(Collectors.toList());
-    }
-
-    private List<Case> saveAll(final List<Case> cases) {
-        final List<Case> createdCases = new ArrayList<>();
-        this.caseRepository.saveAll(cases).iterator().forEachRemaining(createdCases::add);
-        return createdCases;
+        return filteredCases.filter(c -> c.getDescription().toLowerCase().contains(caseCriteria.getDescription().toLowerCase()));
     }
 
 }

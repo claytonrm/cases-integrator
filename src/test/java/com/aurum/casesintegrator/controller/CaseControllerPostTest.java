@@ -28,6 +28,8 @@ import com.aurum.casesintegrator.domain.Case;
 import com.aurum.casesintegrator.util.FileUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 
+import reactor.core.publisher.Flux;
+
 @DisplayName("[CaseController] - Unit Tests for POST requests on Case Controller")
 public class CaseControllerPostTest extends CaseControllerBaseTest {
 
@@ -37,8 +39,8 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(mapper.readValue(jsonRequest, Case.class)));
 
         final Case expectedCaseFromService = mapper.readValue(jsonRequest, Case.class);
-        expectedCaseFromService.setId(1L);
-        given(super.caseService.create(Mockito.any())).willReturn(List.of(expectedCaseFromService));
+        expectedCaseFromService.setId("1");
+        given(super.caseService.create(Mockito.any())).willReturn(Flux.just(expectedCaseFromService));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isCreated())
@@ -103,10 +105,9 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
         final String jsonRequest = FileUtil.readFile("BatchCasesReducedSample.json");
         final List<Case> expectedCasesFromService = mapper.readValue(jsonRequest, new TypeReference<>() {});
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(expectedCasesFromService);
-        given(super.caseService.create(expectedCasesFromService)).willReturn(expectedCasesFromService.stream()
-                .peek(singleCase -> singleCase.setId(new Random().nextLong()))
-                .collect(Collectors.toList())
-        );
+        given(super.caseService.create(expectedCasesFromService)).willReturn(Flux.fromIterable(
+                expectedCasesFromService.stream().peek(singleCase -> singleCase.setId(String.valueOf(new Random().nextLong()))).collect(Collectors.toList())
+        ));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isMultiStatus());
@@ -118,7 +119,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
         final List<Case> expectedCasesFromService = mapper.readValue(jsonRequest, new TypeReference<>() {});
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(expectedCasesFromService);
         final List<Case> expectedAfterSaving = mapper.readValue(FileUtil.readFile("BatchCasesMixedIdsNoConflictsSample.json"), new TypeReference<>() {});
-        given(super.caseService.create(expectedCasesFromService)).willReturn(expectedAfterSaving);
+        given(super.caseService.create(expectedCasesFromService)).willReturn(Flux.fromIterable(expectedAfterSaving));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isMultiStatus())
