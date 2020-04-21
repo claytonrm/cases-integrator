@@ -25,6 +25,6 @@ public class CreationDateCriteriaStrategy extends FilterCriteria implements Crit
         final Pageable pageable = PageRequest.of(super.criteria.getPage(), super.criteria.getLimit());
         final Long startsAt = super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         final Long endsAt = super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
-        return super.repository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(startsAt, endsAt, pageable);
+        return super.repository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(startsAt, endsAt, pageable);
     }
 }

@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.management.InstanceAlreadyExistsException;
+import javax.management.InstanceNotFoundException;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.core.Ordered;
@@ -40,6 +41,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(InstanceAlreadyExistsException.class)
     public ResponseEntity<Object> handleInstanceAlreadyExistsException(final InstanceAlreadyExistsException e) {
         return buildResponseEntity(new ApiError(HttpStatus.CONFLICT, Set.of(e.getMessage())));
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(InstanceNotFoundException.class)
+    public ResponseEntity<Object> handleInstanceNotFoundException(final InstanceNotFoundException e) {
+        return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, Set.of(e.getMessage())));
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

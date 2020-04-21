@@ -17,7 +17,7 @@ public interface CaseRepository extends FirestoreReactiveRepository<Case> {
 
     Flux<Case> findByAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(final String accessType, final Long startInstant, final Long endInstant, final Pageable pageable);
 
-    Flux<Case> findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(final Long startInstant, final Long endInstant, final Pageable pageable);
+    Flux<Case> findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(final Long startInstant, final Long endInstant, final Pageable pageable);
 
     Flux<Case> findByCustomerAndLabelsContainingAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(final String customer, final List<String> labels, final String accessType,
                                                                                                                                  final Long startInstant, final Long endInstant, final Pageable pageable);

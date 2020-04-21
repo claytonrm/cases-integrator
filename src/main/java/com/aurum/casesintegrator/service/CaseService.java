@@ -3,6 +3,7 @@ package com.aurum.casesintegrator.service;
 import java.util.List;
 
 import javax.management.InstanceAlreadyExistsException;
+import javax.management.InstanceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import com.aurum.casesintegrator.util.JsonUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 public class CaseService {
@@ -36,11 +38,13 @@ public class CaseService {
     }
 
     public List<Case> getExtractedCasesFrom(final String singleOrMultiple) {
-        final List<Case> multipleCases = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {});
+        final List<Case> multipleCases = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {
+        });
         if (multipleCases != null) {
             return multipleCases;
         }
-        final Case singleCase = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {});
+        final Case singleCase = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {
+        });
         return singleCase != null ? List.of(singleCase) : List.of();
     }
 
@@ -54,6 +58,14 @@ public class CaseService {
         }
 
         this.caseRepository.save(newCaseData);
+    }
+
+    public Mono<Case> findById(final String id) throws InstanceNotFoundException {
+        final Mono<Case> legalCase = this.caseRepository.findById(id);
+        if (!legalCase.blockOptional().isPresent()) {
+            throw new InstanceNotFoundException("Resource does not exist.");
+        }
+        return legalCase;
     }
 
     public Flux<Case> findByCriteria(final CaseCriteria caseCriteria) {
