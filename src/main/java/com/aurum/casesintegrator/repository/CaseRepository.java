@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.cloud.gcp.data.firestore.FirestoreReactiveRepository;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
 
 import com.aurum.casesintegrator.domain.Case;
 
 import reactor.core.publisher.Flux;
 
+@Repository
 public interface CaseRepository extends FirestoreReactiveRepository<Case> {
 
     Flux<Case> findByCustomerAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(final String customer, final Long startInstant, final Long endInstant, final Pageable pageable);

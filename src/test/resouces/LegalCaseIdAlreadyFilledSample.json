@@ -1,5 +1,5 @@
 {
-  "id": 1991180042020,
+  "id": "870cd9a8-b07a-41f4-b8a6-7dcb8bec3344",
   "folder": "C23 - Legal Cases",
   "customer": "Mike McCready",
   "title": "Full Sample Case",
@@ -11,5 +11,5 @@
   "notes": "Some notes about case stuff",
   "inChargeOf": "Eddie Vedder",
   "accessType": "PRIVATE",
-  "createdAt": "2020-04-16T20:45:53Z"
+  "createdAtInstant": 1587438000000
 }

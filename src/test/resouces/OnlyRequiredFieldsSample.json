@@ -1,0 +1,16 @@
+[
+  {
+    "id": "870cd9a8-b07a-41f4-b8a6-7dcb8bec3344",
+    "customer": "Mike McCready",
+    "title": "Full Sample Case",
+    "inChargeOf": "Eddie Vedder",
+    "createdAtInstant": 1587438000000
+  },
+  {
+    "id": "0616dddb-55e7-4896-a4b9-0b4a06f64f99",
+    "customer": "Petra A. Sosa",
+    "title": "Turpis Nulla Institute",
+    "inChargeOf": "Jana",
+    "createdAtInstant": 1587351600000
+  }
+]

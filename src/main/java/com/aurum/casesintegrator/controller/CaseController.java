@@ -74,17 +74,17 @@ public class CaseController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Mono<Case>> findById(@PathVariable String id) throws InstanceNotFoundException {
-        return ResponseEntity.ok(this.caseService.findById(id));
+    public ResponseEntity<Case> findById(@PathVariable String id) throws InstanceNotFoundException {
+        return ResponseEntity.ok(this.caseService.findById(id).block());
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Flux<Case>> findBy(final CaseCriteria caseCriteria) {
+    public ResponseEntity<Object> findByCriteria(final CaseCriteria caseCriteria) {
         fillMissingRequiredFields(caseCriteria);
-        return ResponseEntity.ok(this.caseService.findByCriteria(caseCriteria));
+        return ResponseEntity.ok(this.caseService.findByCriteria(caseCriteria).collectList().block());
     }
 
     private void fillMissingRequiredFields(CaseCriteria caseCriteria) {

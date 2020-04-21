@@ -44,7 +44,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$.id", is("1")))
                 .andExpect(jsonPath("$.status", is(HttpStatus.CREATED.name())))
                 .andExpect(jsonPath("$.uri", is("http://localhost/v1/cases/1")));
 
@@ -81,8 +81,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
                 .andExpect(jsonPath("$.messages", containsInAnyOrder(
                         "Property \"customer\" must not be blank.",
                         "Property \"title\" must not be blank.",
-                        "Property \"inChargeOf\" must not be blank.",
-                        "Property \"createdAt\" must not be null."
+                        "Property \"inChargeOf\" must not be blank."
                 )));
 
         verify(super.caseService, times(NO_INTERACTION)).create(anyList());

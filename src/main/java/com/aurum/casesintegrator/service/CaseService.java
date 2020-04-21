@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.aurum.casesintegrator.domain.AccessType;
 import com.aurum.casesintegrator.domain.Case;
 import com.aurum.casesintegrator.domain.CaseCriteria;
 import com.aurum.casesintegrator.repository.CaseRepository;
@@ -38,13 +39,11 @@ public class CaseService {
     }
 
     public List<Case> getExtractedCasesFrom(final String singleOrMultiple) {
-        final List<Case> multipleCases = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {
-        });
+        final List<Case> multipleCases = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {});
         if (multipleCases != null) {
             return multipleCases;
         }
-        final Case singleCase = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {
-        });
+        final Case singleCase = JsonUtil.fromString(singleOrMultiple, new TypeReference<>() {});
         return singleCase != null ? List.of(singleCase) : List.of();
     }
 
@@ -63,23 +62,32 @@ public class CaseService {
     public Mono<Case> findById(final String id) throws InstanceNotFoundException {
         final Mono<Case> legalCase = this.caseRepository.findById(id);
         if (!legalCase.blockOptional().isPresent()) {
-            throw new InstanceNotFoundException("Resource does not exist.");
+            throw new InstanceNotFoundException(String.format("Resource %s does not exist.", id));
         }
         return legalCase;
     }
 
     public Flux<Case> findByCriteria(final CaseCriteria caseCriteria) {
+        validateParams(caseCriteria);
+
         final FilterCriteriaFactory criteriaFactory = new FilterCriteriaFactory(this.caseRepository);
         final FilterCriteria criteria = criteriaFactory.getCriteria(caseCriteria);
         final Flux<Case> filteredCases = new Criteria(criteria).filter()
-                .filter(c -> caseCriteria.getFolder() == null || c.getFolder().toLowerCase().contains(caseCriteria.getFolder().toLowerCase()))
-                .filter(c -> caseCriteria.getTitle() == null || c.getTitle().toLowerCase().contains(caseCriteria.getTitle().toLowerCase()))
+                //Non-indexed fields
+                .filter(c -> caseCriteria.getFolder() == null || c.getFolder() != null && c.getFolder().toLowerCase().contains(caseCriteria.getFolder().toLowerCase()))
+                .filter(c -> caseCriteria.getTitle() == null || c.getTitle() != null && c.getTitle().toLowerCase().contains(caseCriteria.getTitle().toLowerCase()))
                 .parallel().sequential();
 
         if (StringUtils.isEmpty(caseCriteria.getDescription())) {
             return filteredCases;
         }
-        return filteredCases.filter(c -> c.getDescription().toLowerCase().contains(caseCriteria.getDescription().toLowerCase()));
+        return filteredCases.filter(c -> c.getDescription() != null && c.getDescription().toLowerCase().contains(caseCriteria.getDescription().toLowerCase()));
+    }
+
+    private void validateParams(CaseCriteria caseCriteria) {
+        if (caseCriteria.getAccessType() != null && AccessType.valueOf(caseCriteria.getAccessType()) == null) {
+            throw new IllegalStateException("Invalid Access Type param. Available options are [" + AccessType.values() + "]");
+        }
     }
 
 }

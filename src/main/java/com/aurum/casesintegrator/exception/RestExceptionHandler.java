@@ -23,12 +23,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler(IllegalStateException.class)
-    protected ResponseEntity<Object> handleIllegalStateException(final IllegalStateException e) {
-        return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, Set.of(e.getMessage())));
-    }
-
     @Override
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<Object> handleMethodArgumentNotValid(final MethodArgumentNotValidException e, final HttpHeaders headers,
@@ -47,6 +41,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(InstanceNotFoundException.class)
     public ResponseEntity<Object> handleInstanceNotFoundException(final InstanceNotFoundException e) {
         return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, Set.of(e.getMessage())));
+    }
+
+    @ResponseStatus(HttpStatus.PRECONDITION_FAILED)
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<Object> handleIllegalStateException(final IllegalStateException e) {
+        return buildResponseEntity(new ApiError(HttpStatus.PRECONDITION_FAILED, Set.of(e.getMessage())));
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

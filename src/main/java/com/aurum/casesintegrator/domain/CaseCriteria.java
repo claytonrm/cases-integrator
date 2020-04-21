@@ -8,12 +8,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class CaseCriteria {
 
     private String folder;
@@ -23,7 +25,7 @@ public class CaseCriteria {
     private String customer;
     private List<String> labels;
 
-    private AccessType accessType;
+    private String accessType;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate from;

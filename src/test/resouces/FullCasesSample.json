@@ -1,0 +1,68 @@
+[
+  {
+    "id": "0088aec5-d272-47f7-b69c-36f89a2e975a",
+    "folder": "Quality Assurance",
+    "customer": "Octavia R. Singleton",
+    "title": "Vel Convallis PC",
+    "labels": [
+      "Divorced",
+      "Married",
+      "Single"
+    ],
+    "description": "eu arcu.",
+    "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",
+    "inChargeOf": "Ori",
+    "accessType": "PRIVATE",
+    "createdAtInstant": 1587351600000
+  },
+  {
+    "id": "00caafb2-2015-4a59-b7cd-0ee9f63572d8",
+    "folder": "Accounting",
+    "customer": "Ainsley C. Manning",
+    "title": "Est PC",
+    "labels": [
+      "Common-Law",
+      "Single",
+      "Married",
+      "Divorced"
+    ],
+    "description": "vel,",
+    "notes": "Lorem",
+    "inChargeOf": "Janna",
+    "accessType": "PUBLIC",
+    "createdAtInstant": 1587351600000
+  },
+  {
+    "id": "0302a73e-219c-4c12-96b7-b27e865a3696",
+    "folder": "Advertising",
+    "customer": "Quamar P. Irwin",
+    "title": "Mauris Erat PC",
+    "labels": [
+      "Married",
+      "Common-Law",
+      "Divorced",
+      "Single"
+    ],
+    "description": "diam lorem, auctor quis,",
+    "notes": "Lorem ipsum",
+    "inChargeOf": "Brian",
+    "accessType": "PUBLIC",
+    "createdAtInstant": 1587351600000
+  },
+  {
+    "id": "0434dcb0-7797-4c8c-8484-2bace3633a80",
+    "folder": "Payroll",
+    "customer": "Candice H. Caldwell",
+    "title": "Et Magnis Inc.",
+    "labels": [
+      "Divorced",
+      "Common-Law",
+      "Single"
+    ],
+    "description": "Integer tincidunt aliquam arcu. Aliquam",
+    "notes": "Lorem ipsum dolor sit amet,",
+    "inChargeOf": "Jenette",
+    "accessType": "PUBLIC",
+    "createdAtInstant": 1587351600000
+  }
+]

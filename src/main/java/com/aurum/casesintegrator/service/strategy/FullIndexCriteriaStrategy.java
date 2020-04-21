@@ -24,7 +24,7 @@ public class FullIndexCriteriaStrategy extends FilterCriteria implements Criteri
         return super.repository.findByCustomerAndLabelsContainingAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 super.criteria.getCustomer(),
                 super.criteria.getLabels(),
-                super.criteria.getAccessType().name(),
+                super.criteria.getAccessType(),
                 super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PageRequest.of(super.criteria.getPage(), super.criteria.getLimit())
