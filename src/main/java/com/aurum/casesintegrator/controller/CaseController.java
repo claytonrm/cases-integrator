@@ -33,14 +33,11 @@ import com.aurum.casesintegrator.util.Constants;
 import com.aurum.casesintegrator.validation.constraint.ValidLegalCase;
 
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 @Validated
 @RestController
 @RequestMapping("/v1/cases")
 public class CaseController {
-
-    private static final String RELATIVE_PATH_RESOURCE_ID = "/v1/cases/{id}";
 
     @Value("${fetch.pages.limit}")
     private int pageLimit;
@@ -94,8 +91,8 @@ public class CaseController {
     }
 
     private ResponseEntity<Object> createSingleStatusResponseCreated(UriComponentsBuilder uriBuilder, Flux<Case> createdCases) {
-        final Case singleCase = createdCases.toStream().findFirst().get();
-        final UriComponents uriComponent = uriBuilder.path(RELATIVE_PATH_RESOURCE_ID).buildAndExpand(singleCase.getId());
+        final Case singleCase = createdCases.blockFirst();
+        final UriComponents uriComponent = generateUriResource(singleCase.getId(), uriBuilder);
         return ResponseEntity.created(uriComponent.toUri()).body(
                 ResourceCreatedResponse.builder()
                         .id(singleCase.getId())
@@ -108,7 +105,7 @@ public class CaseController {
 
     private List<ResourceCreatedResponse> createMultipleStatusBody(final Flux<Case> createdCases, final UriComponentsBuilder uriBuilder) {
         return createdCases.toStream().map(singleCase -> {
-            final String uri = uriBuilder.cloneBuilder().path(RELATIVE_PATH_RESOURCE_ID).buildAndExpand(singleCase.getId()).toUriString();
+            final String uri = generateUriResource(singleCase.getId(), uriBuilder).toUriString();
             final boolean isIdConflicted = singleCase.getId() == null;
             return ResourceCreatedResponse.builder()
                     .id(singleCase.getId())
@@ -117,6 +114,10 @@ public class CaseController {
                     .uri(isIdConflicted ? null : uri)
                     .build();
         }).collect(Collectors.toList());
+    }
+
+    private UriComponents generateUriResource(final String id, final UriComponentsBuilder uriComponentsBuilder) {
+        return uriComponentsBuilder.cloneBuilder().path("/v1/cases/{id}").buildAndExpand(id);
     }
 
 }

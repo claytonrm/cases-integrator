@@ -11,7 +11,7 @@ import com.aurum.casesintegrator.repository.CaseRepository;
 
 @SpringBootTest
 @DisplayName("[CaseService] - Unit Tests for Cases Services")
-public class CaseServiceBaseTest {
+public class CaseServiceBase {
 
     @Autowired
     protected CaseService caseService;

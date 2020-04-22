@@ -28,7 +28,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @DisplayName("[CaseController] - Unit Tests for GET requests on Case Controller")
-public class CaseControllerGetTest extends CaseControllerBaseTest {
+public class CaseControllerGetTest extends CaseControllerBase {
     @Test
     public void findById_shouldCallServiceToFindResourceByIdAndReturnSuccessResponse() throws Exception {
         final String expectedJson = FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json");

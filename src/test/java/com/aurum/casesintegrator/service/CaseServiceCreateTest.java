@@ -22,7 +22,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @DisplayName("[CaseService] - Unit Tests for create Cases")
-public class CaseServiceCreateTest extends CaseServiceBaseTest {
+public class CaseServiceCreateTest extends CaseServiceBase {
 
     @Test
     public void create_shouldCallRepositoryToCreateASingleCase() throws InstanceAlreadyExistsException {

@@ -43,9 +43,10 @@ public class BatchCaseService {
     }
 
     private List<Case> generateValuesForMissingFields(final List<Case> cases) {
-        return cases.stream().peek(c -> {
+        return cases.stream().map(c -> {
             c.setId(c.getId() == null ? UUID.randomUUID().toString() : c.getId());
             c.setCreatedAtInstant(c.getCreatedAtInstant() == null ? DateUtil.getCurrentDateInstantZero() : c.getCreatedAtInstant());
+            return c;
         }).collect(Collectors.toList());
     }
 

@@ -13,7 +13,7 @@ import com.aurum.casesintegrator.util.FileUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 @DisplayName("[CaseController] - Unit Tests for PUT requests on Case Controller")
-public class CaseControllerUpdateTest extends CaseControllerBaseTest {
+public class CaseControllerUpdateTest extends CaseControllerBase {
 
     @Test
     public void update_shouldCallServiceToUpdateAllCaseFields() throws Exception {

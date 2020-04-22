@@ -25,7 +25,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import reactor.core.publisher.Flux;
 
 @DisplayName("[CaseService] - Unit Tests for find cases by criteria and full text searching")
-public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBaseTest {
+public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase {
 
     @Test
     public void findByCriteria_shouldFilterByDescription() {

@@ -31,7 +31,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import reactor.core.publisher.Flux;
 
 @DisplayName("[CaseController] - Unit Tests for POST requests on Case Controller")
-public class CaseControllerPostTest extends CaseControllerBaseTest {
+public class CaseControllerPostTest extends CaseControllerBase {
 
     @Test
     public void create_shouldCallServiceToCreateASingleCaseAndReturnStatusCreatedWithResponseBody() throws Exception {

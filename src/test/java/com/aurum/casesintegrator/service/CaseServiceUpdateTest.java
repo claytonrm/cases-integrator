@@ -16,7 +16,7 @@ import com.aurum.casesintegrator.util.DateUtil;
 import reactor.core.publisher.Mono;
 
 @DisplayName("[CaseService] - Unit Tests for update Cases")
-public class CaseServiceUpdateTest extends CaseServiceBaseTest {
+public class CaseServiceUpdateTest extends CaseServiceBase {
 
     @Test
     public void updateAllFields_shouldUpdateAllFields() {

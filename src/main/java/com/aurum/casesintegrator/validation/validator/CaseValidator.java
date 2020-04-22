@@ -30,7 +30,7 @@ public class CaseValidator implements ConstraintValidator<ValidLegalCase, String
             return false;
         }
 
-        return !cases.stream().anyMatch(singleCase -> {
+        return cases.stream().noneMatch(singleCase -> {
             final Set<ConstraintViolation<Case>> fieldsConstraintViolations = this.validator.validate(singleCase);
             final boolean thereAreFailedFields = !CollectionUtils.isEmpty(fieldsConstraintViolations);
             if (thereAreFailedFields) {

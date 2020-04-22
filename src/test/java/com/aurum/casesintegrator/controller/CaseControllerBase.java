@@ -13,7 +13,7 @@ import com.aurum.casesintegrator.service.CaseService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest(CaseController.class)
-public class CaseControllerBaseTest {
+public class CaseControllerBase {
 
     protected static final String TARGET_RELATIVE_PATH = "/v1/cases";
     protected static final int NO_INTERACTION = 0;
