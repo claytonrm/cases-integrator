@@ -31,7 +31,7 @@ public class CaseControllerUpdateTest extends CaseControllerBaseTest {
 
     @Test
     public void update_shouldCallServiceThrowingIllegalArgumentExceptionAndReturnBadRequestStatus() throws Exception {
-        final String jsonRequest = FileUtil.readFile("./samples/LegalCaseIdAlreadyFilledSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json");
         final Case caseToUpdate = mapper.readValue(jsonRequest, new TypeReference<>() {});
         doThrow(new IllegalArgumentException("Field id must be filled.")).when(super.caseService).updateAllFields(caseToUpdate);
 

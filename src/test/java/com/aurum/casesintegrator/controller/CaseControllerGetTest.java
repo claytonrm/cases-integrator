@@ -60,8 +60,8 @@ public class CaseControllerGetTest extends CaseControllerBaseTest {
         final List<Case> foundCases = JsonUtil.fromString(expectedCasesJson, new TypeReference<>() {});
         final CaseCriteria criteria = CaseCriteria.builder()
                 .accessType(AccessType.PUBLIC.name())
-                .from(LocalDate.now())
-                .to(LocalDate.now())
+                .from(LocalDate.of(2020, 04, 21))
+                .to(LocalDate.of(2020, 04, 21))
                 .limit(100)
                 .build();
         given(super.caseService.findByCriteria(criteria)).willReturn(Flux.fromIterable(foundCases));
@@ -80,8 +80,8 @@ public class CaseControllerGetTest extends CaseControllerBaseTest {
     public void findByCriteria_shouldCallServiceToFindBySomeCriteriaAndReturnSuccessWithEmptyResponse() throws Exception {
         final CaseCriteria criteria = CaseCriteria.builder()
                 .accessType(AccessType.PUBLIC.name())
-                .from(LocalDate.now())
-                .to(LocalDate.now())
+                .from(LocalDate.of(2020, 04, 21))
+                .to(LocalDate.of(2020, 04, 21))
                 .limit(100)
                 .build();
         given(super.caseService.findByCriteria(criteria)).willReturn(Flux.empty());
@@ -100,8 +100,8 @@ public class CaseControllerGetTest extends CaseControllerBaseTest {
     public void findByCriteria_shouldCallServiceThrowingIllegalStateExceptionAccessTypeInvalidAndReturnStatusPreconditionFailed() throws Exception {
         final CaseCriteria criteria = CaseCriteria.builder()
                 .accessType("PUBLICC")
-                .from(LocalDate.now())
-                .to(LocalDate.now())
+                .from(LocalDate.of(2020, 04, 21))
+                .to(LocalDate.of(2020, 04, 21))
                 .limit(100)
                 .build();
         final String expectedExceptionMessage = "Invalid Access Type param. Available options are [" + AccessType.values() + "]";
