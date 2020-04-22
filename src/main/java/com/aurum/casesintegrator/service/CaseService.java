@@ -85,8 +85,14 @@ public class CaseService {
     }
 
     private void validateParams(CaseCriteria caseCriteria) {
-        if (caseCriteria.getAccessType() != null && AccessType.valueOf(caseCriteria.getAccessType()) == null) {
-            throw new IllegalStateException("Invalid Access Type param. Available options are [" + AccessType.values() + "]");
+        try {
+            if (caseCriteria.getAccessType() != null) {
+                AccessType.valueOf(caseCriteria.getAccessType());
+            }
+        } catch (IllegalArgumentException e) {
+            throw new IllegalStateException(String.format("Invalid Access Type param. Available options are [%s, %s]",
+                    AccessType.PUBLIC.name(), AccessType.PRIVATE.name()
+            ));
         }
     }
 
