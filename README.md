@@ -1,5 +1,5 @@
 # Cases Integrator
-*Spring Boot REST API for Cases management<br>
+*Spring Boot REST API for Cases management*<br>
 
 ### Get Started
 

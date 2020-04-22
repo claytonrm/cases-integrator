@@ -21,10 +21,13 @@ public class AccessTypeCriteriaStrategy extends FilterCriteria implements Criter
 
     @Override
     public Flux<Case> filter() {
-        return super.repository.findByAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
-                super.criteria.getAccessType(),
-                super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
-                super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
-                PageRequest.of(super.criteria.getPage(), super.criteria.getLimit()));
+        return super.filterByFullTextSearching(
+                super.repository.findByAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
+                        super.criteria.getAccessType(),
+                        super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                        super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                        PageRequest.of(super.criteria.getPage(), super.criteria.getLimit())
+                )
+        );
     }
 }

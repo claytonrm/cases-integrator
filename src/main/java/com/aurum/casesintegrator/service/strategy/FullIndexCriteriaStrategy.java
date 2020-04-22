@@ -21,13 +21,15 @@ public class FullIndexCriteriaStrategy extends FilterCriteria implements Criteri
 
     @Override
     public Flux<Case> filter() {
-        return super.repository.findByCustomerAndLabelsContainingAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
-                super.criteria.getCustomer(),
-                super.criteria.getLabels(),
-                super.criteria.getAccessType(),
-                super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
-                super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
-                PageRequest.of(super.criteria.getPage(), super.criteria.getLimit())
+        return super.filterByFullTextSearching(
+                super.repository.findByCustomerAndLabelsContainingAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
+                        super.criteria.getCustomer(),
+                        super.criteria.getLabels(),
+                        super.criteria.getAccessType(),
+                        super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                        super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                        PageRequest.of(super.criteria.getPage(), super.criteria.getLimit())
+                )
         );
     }
 }

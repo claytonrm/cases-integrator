@@ -7,7 +7,6 @@ import javax.management.InstanceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import com.aurum.casesintegrator.domain.AccessType;
 import com.aurum.casesintegrator.domain.Case;
@@ -72,16 +71,8 @@ public class CaseService {
 
         final FilterCriteriaFactory criteriaFactory = new FilterCriteriaFactory(this.caseRepository);
         final FilterCriteria criteria = criteriaFactory.getCriteria(caseCriteria);
-        final Flux<Case> filteredCases = new Criteria(criteria).filter()
-                //Non-indexed fields
-                .filter(c -> caseCriteria.getFolder() == null || c.getFolder() != null && c.getFolder().toLowerCase().contains(caseCriteria.getFolder().toLowerCase()))
-                .filter(c -> caseCriteria.getTitle() == null || c.getTitle() != null && c.getTitle().toLowerCase().contains(caseCriteria.getTitle().toLowerCase()))
-                .parallel().sequential();
 
-        if (StringUtils.isEmpty(caseCriteria.getDescription())) {
-            return filteredCases;
-        }
-        return filteredCases.filter(c -> c.getDescription() != null && c.getDescription().toLowerCase().contains(caseCriteria.getDescription().toLowerCase()));
+        return new Criteria(criteria).filter();
     }
 
     private void validateParams(CaseCriteria caseCriteria) {
@@ -95,5 +86,4 @@ public class CaseService {
             ));
         }
     }
-
 }

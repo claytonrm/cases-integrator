@@ -1,7 +1,9 @@
 package com.aurum.casesintegrator.service;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
@@ -36,7 +38,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
                 anyLong(),
-                any(Pageable.class)
+                eq(PageRequest.of(0, 100))
         )).willReturn(Flux.just(caseSample));
 
         final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
@@ -46,7 +48,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 caseCriteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
         );
-        org.assertj.core.api.Assertions.assertThat(foundCases.collectList().block()).isEqualTo(List.of(caseSample));
+        assertThat(foundCases.collectList().block()).isEqualTo(List.of(caseSample));
     }
 
     @Test
@@ -61,7 +63,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
                 anyLong(),
-                any(Pageable.class)
+                eq(PageRequest.of(0, 100))
         )).willReturn(Flux.just(caseSample));
 
         final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
@@ -71,7 +73,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 caseCriteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
         );
-        org.assertj.core.api.Assertions.assertThat(foundCases.collectList().block()).isEqualTo(List.of(caseSample));
+        assertThat(foundCases.collectList().block()).isEqualTo(List.of(caseSample));
     }
 
     @Test
@@ -86,7 +88,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
                 anyLong(),
-                any(Pageable.class)
+                eq(PageRequest.of(0, 100))
         )).willReturn(Flux.just(caseSample));
 
         final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
@@ -96,19 +98,20 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 caseCriteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
         );
-        org.assertj.core.api.Assertions.assertThat(foundCases.collectList().block()).isEmpty();
+        assertThat(foundCases.collectList().block()).isEmpty();
     }
 
     @Test
     public void findByCriteria_shouldFilterByDescriptionAndReturnEmpty() {
         final CaseCriteria caseCriteria = CaseCriteria.builder()
                 .description("Nothing").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {
+        });
 
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
                 anyLong(),
-                any(Pageable.class)
+                eq(PageRequest.of(0, 100))
         )).willReturn(Flux.just(caseSample));
 
         final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
@@ -118,7 +121,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 caseCriteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
         );
-        org.assertj.core.api.Assertions.assertThat(foundCases.collectList().block()).isEmpty();
+        assertThat(foundCases.collectList().block()).isEmpty();
     }
 
     @Test
@@ -130,7 +133,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
                 anyLong(),
-                any(Pageable.class)
+                eq(PageRequest.of(0, 100))
         )).willReturn(Flux.fromIterable(caseSample));
 
         final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
@@ -140,7 +143,57 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 caseCriteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
         );
-        org.assertj.core.api.Assertions.assertThat(foundCases.collectList().block()).isEmpty();
+        assertThat(foundCases.collectList().block()).isEmpty();
+    }
+
+    @Test
+    public void findByCriteria_shouldFilterByTitleCallingRepositoryUntilFindSomeOrThereIsNoMoreRecords() {
+        final CaseCriteria caseCriteria = CaseCriteria.builder()
+                .title("Est").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
+        final List<Case> caseSamplePage1 = JsonUtil.fromString(FileUtil.readFile("samples/OnlyRequiredFieldsSample.json"), new TypeReference<>() {});
+        final List<Case> caseSamplePage2 = JsonUtil.fromString(FileUtil.readFile("samples/BatchCasesMixedIdsNoConflictsSample.json"), new TypeReference<>() {});
+        final List<Case> caseSamplePage3 = JsonUtil.fromString(FileUtil.readFile("samples/FullCasesSample.json"), new TypeReference<>() {});
+
+        given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
+                anyLong(),
+                anyLong(),
+                eq(PageRequest.of(0, 100))
+        )).willReturn(Flux.fromIterable(caseSamplePage1));
+
+        given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
+                anyLong(),
+                anyLong(),
+                eq(PageRequest.of(1, 100))
+        )).willReturn(Flux.fromIterable(caseSamplePage2));
+
+        given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
+                anyLong(),
+                anyLong(),
+                eq(PageRequest.of(2, 100))
+        )).willReturn(Flux.fromIterable(caseSamplePage3));
+
+        final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
+
+        assertThat(foundCases.collectList().block()).hasSize(1);
+        assertThat(foundCases.blockFirst().getId()).isEqualTo("00caafb2-2015-4a59-b7cd-0ee9f63572d8");
+    }
+
+    @Test
+    public void findByCriteria_shouldFilterByTitleCallingRepositoryAtMost100() {
+        final CaseCriteria caseCriteria = CaseCriteria.builder()
+                .title("Est").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
+        final List<Case> caseSample = JsonUtil.fromString(FileUtil.readFile("samples/FullCasesSample.json"), new TypeReference<>() {});
+
+        given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
+                anyLong(),
+                anyLong(),
+                any(Pageable.class)
+        )).willReturn(Flux.fromIterable(caseSample));
+
+        final Flux<Case> foundCases = super.caseService.findByCriteria(caseCriteria);
+
+        assertThat(foundCases.collectList().block()).hasSize(1);
+        assertThat(foundCases.blockFirst().getId()).isEqualTo("00caafb2-2015-4a59-b7cd-0ee9f63572d8");
     }
 
 

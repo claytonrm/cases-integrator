@@ -25,6 +25,26 @@ public class CreationDateCriteriaStrategy extends FilterCriteria implements Crit
         final Pageable pageable = PageRequest.of(super.criteria.getPage(), super.criteria.getLimit());
         final Long startsAt = super.criteria.getFrom().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         final Long endsAt = super.criteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
-        return super.repository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(startsAt, endsAt, pageable);
+        return isFullTextSearch()
+                ? filter(Flux.empty(), startsAt, endsAt, pageable)
+                : super.repository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(startsAt, endsAt, pageable);
     }
+
+    private Flux<Case> filter(final Flux<Case> current, final Long startsAt, final Long endsAt, final Pageable pageable) {
+        if (pageable.getPageNumber() == super.criteria.getLimit()) {
+            return current;
+        }
+
+        final Flux<Case> foundCases = super.filterByFullTextSearching(
+                super.repository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(startsAt, endsAt, pageable)
+        );
+
+        return filter(
+                current.mergeWith(foundCases).distinct(),
+                startsAt,
+                endsAt,
+                pageable.next()
+        );
+    }
+
 }
