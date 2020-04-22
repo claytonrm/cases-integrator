@@ -35,7 +35,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldCallServiceToCreateASingleCaseAndReturnStatusCreatedWithResponseBody() throws Exception {
-        final String jsonRequest = FileUtil.readFile("LegalCaseFullSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/LegalCaseFullSample.json");
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(mapper.readValue(jsonRequest, Case.class)));
 
         final Case expectedCaseFromService = mapper.readValue(jsonRequest, Case.class);
@@ -61,7 +61,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldValidateRequiredParamCustomerAndReturnStatusBadRequest() throws Exception {
-        final String jsonRequest = FileUtil.readFile("LegalCaseMissingCustomerSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/LegalCaseMissingCustomerSample.json");
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(mapper.readValue(jsonRequest, Case.class)));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -73,7 +73,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldValidateAllRequiredParamsAndReturnStatusBadRequest() throws Exception {
-        final String jsonRequest = FileUtil.readFile("LegalCaseMissingAllRequiredFieldsSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/LegalCaseMissingAllRequiredFieldsSample.json");
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(mapper.readValue(jsonRequest, Case.class)));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -89,7 +89,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldValidateMaxLengthOnFolderPropertyAndReturnStatusBadRequest() throws Exception {
-        final String jsonRequest = FileUtil.readFile("LegalCaseExceededFolderMaxLengthSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/LegalCaseExceededFolderMaxLengthSample.json");
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(mapper.readValue(jsonRequest, Case.class)));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -101,7 +101,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldCallServiceToCreateLoadsOfCasesAndReturnStatusMultipleStatus() throws Exception {
-        final String jsonRequest = FileUtil.readFile("BatchCasesReducedSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/BatchCasesReducedSample.json");
         final List<Case> expectedCasesFromService = mapper.readValue(jsonRequest, new TypeReference<>() {});
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(expectedCasesFromService);
         given(super.caseService.create(expectedCasesFromService)).willReturn(Flux.fromIterable(
@@ -114,10 +114,10 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldCallServiceToCreateLoadsOfCasesAndReturnStatusMultipleStatusContainingConflicts() throws Exception {
-        final String jsonRequest = FileUtil.readFile("BatchCasesMixedIdsSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/BatchCasesMixedIdsSample.json");
         final List<Case> expectedCasesFromService = mapper.readValue(jsonRequest, new TypeReference<>() {});
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(expectedCasesFromService);
-        final List<Case> expectedAfterSaving = mapper.readValue(FileUtil.readFile("BatchCasesMixedIdsNoConflictsSample.json"), new TypeReference<>() {});
+        final List<Case> expectedAfterSaving = mapper.readValue(FileUtil.readFile("samples/BatchCasesMixedIdsNoConflictsSample.json"), new TypeReference<>() {});
         given(super.caseService.create(expectedCasesFromService)).willReturn(Flux.fromIterable(expectedAfterSaving));
 
         super.mockMvc.perform(post(TARGET_RELATIVE_PATH).content(jsonRequest).contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -131,7 +131,7 @@ public class CaseControllerPostTest extends CaseControllerBaseTest {
 
     @Test
     public void create_shouldCallServiceThrowingAnInstanceAlreadyExistsExceptionAndReturnConflictStatusCode() throws Exception {
-        final String jsonRequest = FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json");
+        final String jsonRequest = FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json");
         final Case expectedCaseFromService = mapper.readValue(jsonRequest, new TypeReference<>() {
         });
         given(super.caseService.getExtractedCasesFrom(jsonRequest)).willReturn(List.of(expectedCaseFromService));

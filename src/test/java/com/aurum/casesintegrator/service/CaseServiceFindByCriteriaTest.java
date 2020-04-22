@@ -32,7 +32,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
     @Test
     public void findByCriteria_shouldCallRepositoryToFindByCriteriaCreationDateAndCustomer() {
         final CaseCriteria caseCriteria = CaseCriteria.builder().customer("Mike").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByCustomerAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyString(),
                 anyLong(),
@@ -59,7 +59,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByCustomerAndLabelsContainingAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyString(),
                 anyList(),
@@ -88,7 +88,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByCustomerAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyString(),
                 anyString(),
@@ -117,7 +117,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByLabelsContainingAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyList(),
                 anyString(),
@@ -145,7 +145,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByLabelsContainingAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyList(),
                 anyLong(),
@@ -171,7 +171,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyString(),
                 anyLong(),
@@ -196,7 +196,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
                 anyLong(),
@@ -222,7 +222,7 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBaseTest {
                 .from(LocalDate.now())
                 .to(LocalDate.now())
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
         given(super.caseRepository.findByCustomerAndLabelsContainingAndAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
                 anyString(),
                 anyList(),

@@ -1,11 +1,12 @@
 package com.aurum.casesintegrator.util;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.util.StreamUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,10 +17,12 @@ public class FileUtil {
         throw new AssertionError("Util class should not be instantiated.");
     }
 
+
     public static String readFile(final String filePath) {
-        try {
-            final File input = new ClassPathResource(filePath).getFile();
-            return new String(Files.readAllBytes(Paths.get(input.getPath())));
+        final Resource resource = new PathMatchingResourcePatternResolver().getResource(filePath);
+
+        try (InputStream inputStream = resource.getInputStream()) {
+            return StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
         } catch (IOException e) {
             log.error("Could not read file.", e);
         }

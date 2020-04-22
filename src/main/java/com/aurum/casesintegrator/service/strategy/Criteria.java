@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 @AllArgsConstructor
 public class Criteria {
 
-    private FilterCriteria strategy;
+    private final FilterCriteria strategy;
 
     public Flux<Case> filter() {
         return strategy.filter();

@@ -1,9 +1,7 @@
 package com.aurum.casesintegrator.service;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
@@ -33,7 +31,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
     public void findByCriteria_shouldFilterByDescription() {
         final CaseCriteria caseCriteria = CaseCriteria.builder()
                 .description("Some desc").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
 
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
@@ -58,7 +56,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 .title("sample")
                 .folder("C23")
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
 
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
@@ -83,7 +81,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
                 .title("Wrong title")
                 .folder("C23")
                 .limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
 
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
@@ -105,7 +103,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
     public void findByCriteria_shouldFilterByDescriptionAndReturnEmpty() {
         final CaseCriteria caseCriteria = CaseCriteria.builder()
                 .description("Nothing").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
-        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
 
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),
@@ -127,7 +125,7 @@ public class CaseServiceFindByCriteriaFullTextSearchTest extends CaseServiceBase
     public void findByCriteria_shouldFilterByDescriptionAndReturnEmptyRecordHasNullDescriptionOnDatabase() {
         final CaseCriteria caseCriteria = CaseCriteria.builder()
                 .description("Something").from(LocalDate.now()).to(LocalDate.now()).limit(100).build();
-        final List<Case> caseSample = JsonUtil.fromString(FileUtil.readFile("OnlyRequiredFieldsSample.json"), new TypeReference<>() {});
+        final List<Case> caseSample = JsonUtil.fromString(FileUtil.readFile("samples/OnlyRequiredFieldsSample.json"), new TypeReference<>() {});
 
         given(super.caseRepository.findByCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqualOrderByCreatedAtInstantDesc(
                 anyLong(),

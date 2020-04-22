@@ -15,7 +15,7 @@ import com.aurum.casesintegrator.service.strategy.LabelsCriteriaStrategy;
 
 public class FilterCriteriaFactory {
 
-    private CaseRepository repository;
+    private final CaseRepository repository;
 
     public FilterCriteriaFactory(final CaseRepository repository) {
         this.repository = repository;

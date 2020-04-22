@@ -31,7 +31,7 @@ import reactor.core.publisher.Mono;
 public class CaseControllerGetTest extends CaseControllerBaseTest {
     @Test
     public void findById_shouldCallServiceToFindResourceByIdAndReturnSuccessResponse() throws Exception {
-        final String expectedJson = FileUtil.readFile("LegalCaseIdAlreadyFilledSample.json");
+        final String expectedJson = FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json");
         final Case expectedCase = JsonUtil.fromString(expectedJson, new TypeReference<>() {
         });
         given(super.caseService.findById(anyString())).willReturn(Mono.just(expectedCase));
@@ -56,7 +56,7 @@ public class CaseControllerGetTest extends CaseControllerBaseTest {
 
     @Test
     public void findByCriteria_shouldCallServiceToFindBySomeCriteriaAndReturnSuccessWithResponseBody() throws Exception {
-        final String expectedCasesJson = FileUtil.readFile("FullCasesSample.json");
+        final String expectedCasesJson = FileUtil.readFile("samples/FullCasesSample.json");
         final List<Case> foundCases = JsonUtil.fromString(expectedCasesJson, new TypeReference<>() {});
         final CaseCriteria criteria = CaseCriteria.builder()
                 .accessType(AccessType.PUBLIC.name())
