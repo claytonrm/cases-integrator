@@ -5,6 +5,7 @@ import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.PageRequest;
@@ -188,6 +190,25 @@ public class CaseServiceFindByCriteriaTest extends CaseServiceBase {
                 PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
         );
         org.assertj.core.api.Assertions.assertThat(foundCases.collectList().block()).isEqualTo(List.of(caseSample));
+    }
+
+    @Test
+    public void findByCriteria_shouldThrowAnIllegalStateExceptionAccessTypeIsInvalid() {
+        final CaseCriteria caseCriteria = CaseCriteria.builder()
+                .accessType("PRIVATEEEE")
+                .from(LocalDate.now())
+                .to(LocalDate.now())
+                .limit(100).build();
+        final Case caseSample = JsonUtil.fromString(FileUtil.readFile("samples/LegalCaseIdAlreadyFilledSample.json"), new TypeReference<>() {});
+
+        Assertions.assertThrows(IllegalStateException.class, () -> super.caseService.findByCriteria(caseCriteria));
+
+        verify(super.caseRepository, times(0)).findByAccessTypeAndCreatedAtInstantGreaterThanEqualAndCreatedAtInstantLessThanEqual(
+                caseCriteria.getAccessType(),
+                DateUtil.getCurrentDateInstantZero(),
+                caseCriteria.getTo().atTime(LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                PageRequest.of(caseCriteria.getPage(), caseCriteria.getLimit())
+        );
     }
 
     @Test

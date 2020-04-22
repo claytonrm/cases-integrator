@@ -59,4 +59,20 @@ public class CaseServiceUpdateTest extends CaseServiceBase {
         assertThrows(IllegalArgumentException.class, () -> super.caseService.updateAllFields(caseToUpdate));
     }
 
+    @Test
+    public void updateAllFields_shouldThrowAnIllegalArgumentExceptionIdIsNull() {
+        final Case caseToUpdate = new Case(null,
+                "O34398",
+                "Clayton",
+                "Some case",
+                List.of("important"),
+                "Some description",
+                "Is someone getting the best of you...",
+                "SRV",
+                AccessType.PUBLIC,
+                DateUtil.getCurrentDateInstantZero()
+        );
+        assertThrows(IllegalArgumentException.class, () -> super.caseService.updateAllFields(caseToUpdate));
+    }
+
 }
