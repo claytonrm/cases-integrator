@@ -32,8 +32,11 @@ import com.aurum.casesintegrator.service.CaseService;
 import com.aurum.casesintegrator.util.Constants;
 import com.aurum.casesintegrator.validation.constraint.ValidLegalCase;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import reactor.core.publisher.Flux;
 
+@Api(tags = "Cases", value = "Resources for cases endpoints")
 @Validated
 @RestController
 @RequestMapping("/v1/cases")
@@ -52,6 +55,7 @@ public class CaseController {
         this.caseService = caseService;
     }
 
+    @ApiOperation(value = "Create a single or multiple case(s)")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Object> create(@ValidLegalCase @RequestBody final String singleOrMultipleCase, final UriComponentsBuilder uriBuilder) throws InstanceAlreadyExistsException {
@@ -64,6 +68,7 @@ public class CaseController {
         return ResponseEntity.status(HttpStatus.MULTI_STATUS).body(createMultipleStatusBody(createdCases, uriBuilder));
     }
 
+    @ApiOperation(value = "Update case fields")
     @PutMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> update(@Valid @RequestBody final Case singleCase) {
@@ -71,12 +76,14 @@ public class CaseController {
         return ResponseEntity.noContent().build();
     }
 
+    @ApiOperation(value = "Get case by resource id")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Case> findById(@PathVariable String id) throws InstanceNotFoundException {
         return ResponseEntity.ok(this.caseService.findById(id).block());
     }
 
+    @ApiOperation(value = "Get case(s) by specific criteria")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Object> findByCriteria(final CaseCriteria caseCriteria) {
