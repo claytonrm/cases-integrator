@@ -94,47 +94,6 @@ public class CaseServiceCreateTest extends CaseServiceBase {
         assertThat(createdCases.blockFirst().getId()).isNotNull();
     }
 
-    @Test
-    public void updateAllFields_shouldCallRepositoryToUpdateAllFields() {
-        /* Given */
-        final Case caseToUpdate = new Case("1",
-                "O34398",
-                "Clayton",
-                "Some case",
-                List.of("important"),
-                "Some description",
-                "Is someone getting the best of you...",
-                "SRV",
-                AccessType.PUBLIC,
-                DateUtil.getCurrentDateInstantZero()
-        );
-        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.just(caseToUpdate));
-
-        /* When */
-        super.caseService.updateAllFields(caseToUpdate);
-
-        /* Then */
-        verify(super.caseRepository).save(caseToUpdate);
-    }
-
-    @Test
-    public void updateAllFields_shouldThrowAnIllegalArgumentExceptionCaseNotExists() {
-        final Case caseToUpdate = new Case("1",
-                "O34398",
-                "Clayton",
-                "Some case",
-                List.of("important"),
-                "Some description",
-                "Is someone getting the best of you...",
-                "SRV",
-                AccessType.PUBLIC,
-                DateUtil.getCurrentDateInstantZero()
-        );
-        given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.empty());
-
-        assertThrows(IllegalArgumentException.class, () -> super.caseService.updateAllFields(caseToUpdate));
-    }
-
     private ArrayList<Case> getMockedDuplicatedCases(final String sameId) {
         return new ArrayList<>(List.of(
                 new Case(sameId,
@@ -172,5 +131,4 @@ public class CaseServiceCreateTest extends CaseServiceBase {
                 )
         ));
     }
-
 }

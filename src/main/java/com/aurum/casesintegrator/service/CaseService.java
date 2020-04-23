@@ -3,8 +3,8 @@ package com.aurum.casesintegrator.service;
 import java.util.List;
 
 import javax.management.InstanceAlreadyExistsException;
-import javax.management.InstanceNotFoundException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,23 +47,19 @@ public class CaseService {
     }
 
     public void updateAllFields(final Case newCaseData) {
-        if (newCaseData.getId() == null) {
+        if (StringUtils.isBlank(newCaseData.getId())) {
             throw new IllegalArgumentException("Field id must be filled.");
         }
 
-        if (this.caseRepository.findById(newCaseData.getId()).blockOptional().isEmpty()) {
+        if (this.findById(newCaseData.getId()).block() == null) {
             throw new IllegalArgumentException("Case not found on database.");
         }
 
-        this.caseRepository.save(newCaseData);
+        this.caseRepository.save(newCaseData).block();
     }
 
-    public Mono<Case> findById(final String id) throws InstanceNotFoundException {
-        final Mono<Case> legalCase = this.caseRepository.findById(id);
-        if (!legalCase.blockOptional().isPresent()) {
-            throw new InstanceNotFoundException(String.format("Resource %s does not exist.", id));
-        }
-        return legalCase;
+    public Mono<Case> findById(final String id) {
+        return this.caseRepository.findById(id);
     }
 
     public Flux<Case> findByCriteria(final CaseCriteria caseCriteria) {

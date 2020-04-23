@@ -3,10 +3,8 @@ package com.aurum.casesintegrator.controller;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.management.InstanceAlreadyExistsException;
-import javax.management.InstanceNotFoundException;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +33,7 @@ import com.aurum.casesintegrator.validation.constraint.ValidLegalCase;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Api(tags = "Cases", value = "Resources for cases endpoints")
 @Validated
@@ -79,16 +78,18 @@ public class CaseController {
     @ApiOperation(value = "Get case by resource id")
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Case> findById(@PathVariable String id) throws InstanceNotFoundException {
-        return ResponseEntity.ok(this.caseService.findById(id).block());
+    public Mono<ResponseEntity<Case>> findById(@PathVariable String id) {
+        return this.caseService.findById(id)
+                .map(c -> ResponseEntity.ok(c))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
     @ApiOperation(value = "Get case(s) by specific criteria")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Object> findByCriteria(final CaseCriteria caseCriteria) {
+    public Flux<Case> findByCriteria(final CaseCriteria caseCriteria) {
         fillMissingRequiredFields(caseCriteria);
-        return ResponseEntity.ok(this.caseService.findByCriteria(caseCriteria).collectList().block());
+        return this.caseService.findByCriteria(caseCriteria);
     }
 
     private void fillMissingRequiredFields(CaseCriteria caseCriteria) {
@@ -111,7 +112,7 @@ public class CaseController {
     }
 
     private List<ResourceCreatedResponse> createMultipleStatusBody(final Flux<Case> createdCases, final UriComponentsBuilder uriBuilder) {
-        return createdCases.toStream().map(singleCase -> {
+        return createdCases.map(singleCase -> {
             final String uri = generateUriResource(singleCase.getId(), uriBuilder).toUriString();
             final boolean isIdConflicted = singleCase.getId() == null;
             return ResourceCreatedResponse.builder()
@@ -120,7 +121,7 @@ public class CaseController {
                     .status(isIdConflicted ? HttpStatus.CONFLICT : HttpStatus.CREATED)
                     .uri(isIdConflicted ? null : uri)
                     .build();
-        }).collect(Collectors.toList());
+        }).collectList().block();
     }
 
     private UriComponents generateUriResource(final String id, final UriComponentsBuilder uriComponentsBuilder) {

@@ -1,6 +1,7 @@
 package com.aurum.casesintegrator.service;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
@@ -32,6 +33,7 @@ public class CaseServiceUpdateTest extends CaseServiceBase {
                 AccessType.PUBLIC,
                 DateUtil.getCurrentDateInstantZero()
         );
+        given(super.caseRepository.save(any())).willReturn(Mono.just(caseToUpdate));
         given(super.caseRepository.findById(caseToUpdate.getId())).willReturn(Mono.just(caseToUpdate));
 
         /* When */

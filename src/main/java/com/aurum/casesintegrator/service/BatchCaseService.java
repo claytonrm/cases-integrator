@@ -24,7 +24,6 @@ public class BatchCaseService {
 
     private final CaseRepository caseRepository;
 
-
     @Autowired
     public BatchCaseService(final CaseRepository caseRepository) {
         this.caseRepository = caseRepository;
