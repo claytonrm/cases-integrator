@@ -97,7 +97,8 @@ public class CaseController {
         return this.caseService.findByCriteria(caseCriteria);
     }
 
-    private void fillMissingRequiredFields(CaseCriteria caseCriteria) {
+    private void fillMissingRequiredFields(final CaseCriteria caseCriteria) {
+        caseCriteria.setPage(caseCriteria.getPage() > 0 ? caseCriteria.getPage() -1 : caseCriteria.getPage());
         caseCriteria.setLimit(caseCriteria.getLimit() == null ? pageLimit : caseCriteria.getLimit());
         caseCriteria.setFrom(caseCriteria.getFrom() == null ? LocalDate.now().minusMonths(monthsLimit) : caseCriteria.getFrom());
         caseCriteria.setTo(caseCriteria.getTo() == null ? LocalDate.now().plusMonths(monthsLimit) : caseCriteria.getTo());
