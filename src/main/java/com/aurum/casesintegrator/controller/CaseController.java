@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,6 +57,7 @@ public class CaseController {
 
     @ApiOperation(value = "Create a single or multiple case(s)")
     @PostMapping
+    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Object> create(@ValidLegalCase @RequestBody final String singleOrMultipleCase, final UriComponentsBuilder uriBuilder) throws InstanceAlreadyExistsException {
         final List<Case> casesToCreate = this.caseService.getExtractedCasesFrom(singleOrMultipleCase);
@@ -69,6 +71,7 @@ public class CaseController {
 
     @ApiOperation(value = "Update case fields")
     @PutMapping
+    @CrossOrigin
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> update(@Valid @RequestBody final Case singleCase) {
         this.caseService.updateAllFields(singleCase);
@@ -77,6 +80,7 @@ public class CaseController {
 
     @ApiOperation(value = "Get case by resource id")
     @GetMapping(value = "/{id}")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     public Mono<ResponseEntity<Case>> findById(@PathVariable String id) {
         return this.caseService.findById(id)
@@ -86,6 +90,7 @@ public class CaseController {
 
     @ApiOperation(value = "Get case(s) by specific criteria")
     @GetMapping
+    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     public Flux<Case> findByCriteria(final CaseCriteria caseCriteria) {
         fillMissingRequiredFields(caseCriteria);
